@@ -1,0 +1,46 @@
+@import "./../../../../styles/variables";
+.desktop-navigation {
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.logo {
+  img {
+    transition: all 0.3s;
+  }
+  a {
+    display: flex;
+  }
+  .logo-text {
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+    span {
+      text-transform: uppercase;
+      letter-spacing: 1rem;
+      margin-bottom: 0.5rem;
+      transition: all 0.3s;
+    }
+  }
+}
+.scrolled {
+  padding: 1rem;
+
+  .logo {
+    img {
+      height: 5rem;
+      width: 5rem;
+    }
+  }
+  .logo-text {
+    padding: 0 0.6rem;
+
+    span {
+      letter-spacing: 0.8rem;
+      margin-bottom: 0;
+    }
+  }
+}
