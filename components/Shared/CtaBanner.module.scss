@@ -1,0 +1,36 @@
+@import "./../../styles/variables";
+
+.cta-banner {
+  background: $color-primary-300;
+  text-align: center;
+  padding: 2rem 0;
+  color: $color-light;
+  h2 {
+    @include h2Font;
+    font-weight: 700;
+  }
+  h4 {
+    @include h4Font;
+  }
+}
+.cta-button {
+  display: inline-block;
+  margin: 3rem 0 2rem 0;
+  padding: 1rem 2rem;
+  background: $color-light;
+  color: $color-primary-500;
+  transition: background 0.3s, color 0.3s;
+  transform: skew(-15deg); /* SKEW */
+  span {
+    display: inline-block;
+    @include h3FontMedium;
+    font-weight: 700;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    transform: skew(15deg); /* UNSKEW */
+  }
+  &:hover {
+    color: $color-light;
+    background-color: $color-secondary-500;
+  }
+}

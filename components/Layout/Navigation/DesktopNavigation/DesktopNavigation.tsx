@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Wrapper } from "../../Wrapper/Wrapper";
 import { NAVIGATIONPATHS } from "../NAVIGATIONPATHS";
+import { NavigationList } from "./NavigationList";
 export const DesktopNavigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const onScroll = useCallback(() => {
@@ -14,7 +15,6 @@ export const DesktopNavigation = () => {
     } else {
       setScrolled(false);
     }
-    console.log(scrolled, " scrollY");
   }, []);
   useEffect(() => {
     //add eventlistener to window
@@ -31,26 +31,32 @@ export const DesktopNavigation = () => {
       }`}
     >
       <Wrapper>
-        <div className={styles["logo"]}>
-          <Link href="/">
-            <Image
-              src="/images/main-logo.png"
-              width={80}
-              height={80}
-              alt="Plesni Studio Ventus logo"
-            />
-            <div className={styles["logo-text"]}>
-              <span>Plesni</span>
-              <span>Studio</span>
-              <span>Ventus</span>
+        <div className={styles["container"]}>
+          {!scrolled && (
+            <div className={styles.contact}>
+              <p>Email: domagoj.sertic@gmail.com</p> <span>-</span>
+              <p>Mobitel: 091-252-2235</p>
             </div>
-          </Link>
+          )}
+          <div className={styles["nav-container"]}>
+            <div className={styles["logo"]}>
+              <Link href="/">
+                <Image
+                  src="/images/main-logo.png"
+                  width={80}
+                  height={80}
+                  alt="Plesni Studio Ventus logo"
+                />
+                <div className={styles["logo-text"]}>
+                  <span>Plesni</span>
+                  <span>Studio</span>
+                  <span>Ventus</span>
+                </div>
+              </Link>
+            </div>
+            <NavigationList navItems={NAVIGATIONPATHS} />
+          </div>
         </div>
-        <ul className={styles["navigation"]}>
-          {NAVIGATIONPATHS.map((path) => {
-            return <li key={path.id}>{path.name}</li>;
-          })}
-        </ul>
       </Wrapper>
     </div>
   );

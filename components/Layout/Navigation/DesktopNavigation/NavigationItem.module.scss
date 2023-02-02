@@ -1,1 +1,19 @@
 @import "./../../../../styles/variables";
+.navigation-item {
+  @include linkFontRegular;
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  transition: background 0.3s, color 0.3s;
+  transform: skew(-15deg); /* SKEW */
+  li {
+    transform: skew(15deg); /* UNSKEW */
+  }
+  &:hover {
+    background-color: $color-primary-300;
+    color: $color-light;
+  }
+}
+.active {
+  background-color: $color-primary-300;
+  color: $color-light;
+}
