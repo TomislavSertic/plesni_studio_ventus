@@ -7,8 +7,7 @@ export const CtaBanner: React.FC<{ title: string }> = ({ title }) => {
       <div className={styles["info"]}>
         <h2>{title}</h2>
         <h4>
-          Prijavite se i dobite 45-minuta lekciju upoznavanja - potpuno
-          besplatno!!
+          Prijavite se i 45-minuta lekcija upoznavanja - potpuno besplatno!!
         </h4>
       </div>
       <Link href="/signup" className={styles["cta-button"]}>

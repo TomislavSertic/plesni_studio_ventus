@@ -1,0 +1,44 @@
+@import "./../../styles/variables";
+.page-card {
+  flex: 1;
+  header {
+    h2 {
+      @include h3FontRegular;
+    }
+    p {
+      color: $color-primary-300;
+      @include bodyFontRegular;
+    }
+    margin-bottom: 2rem;
+  }
+}
+.image-container {
+  margin-bottom: 2rem;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.description {
+  min-height: 10rem;
+  p {
+    @include bodyFontRegular;
+    text-align: left;
+    opacity: 0.8;
+  }
+}
+.button-container {
+  padding: 0 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+@media screen and (max-width: $breakpoint-tablet) {
+  .image-container {
+    img {
+      object-fit: contain;
+    }
+  }
+  .description {
+    min-height: auto;
+  }
+}

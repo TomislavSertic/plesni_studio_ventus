@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { HeroTitle } from "../components/HomePage/HeroTitle";
+import { MiddleCards } from "../components/HomePage/MiddleCards";
 import { HeroSection } from "../components/Layout/HeroSection/HeroSection";
+import { OurClasses } from "../components/Shared/OurClasses/OurClasses";
 
 export default function Home() {
   return (
@@ -15,6 +17,8 @@ export default function Home() {
         <HeroSection bgUrl="/images/hero-image.jpeg">
           <HeroTitle />
         </HeroSection>
+        <MiddleCards />
+        <OurClasses />
       </main>
     </>
   );
