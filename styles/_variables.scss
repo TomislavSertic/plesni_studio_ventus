@@ -35,7 +35,8 @@ $line-height-md: 2rem;
 $line-height-sm: 1.6rem;
 
 $container-max-width: 120rem;
-$breakpoint-tablet: 872px;
+$breakpoint-tablet: 87.2rem;
+$breakpoint-mobile: 56rem;
 @mixin h1Font {
   font-size: $font-size-h1;
   line-height: $line-height-h1;

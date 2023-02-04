@@ -37,6 +37,13 @@
 .cards-container {
   display: flex;
   justify-content: space-around;
-  gap: 5rem;
+  gap: 8rem;
   flex-wrap: wrap;
+}
+@media screen and (max-width: $breakpoint-tablet) {
+}
+@media screen and (max-width: $breakpoint-mobile) {
+  .cards-container {
+    gap: 8rem;
+  }
 }

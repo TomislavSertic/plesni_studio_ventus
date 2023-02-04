@@ -1,6 +1,6 @@
 @import "./../../styles/variables";
 .round-card {
-  width: 30rem;
+  width: 25%;
   border-radius: 50%;
   position: relative;
   &:hover {
@@ -56,4 +56,16 @@
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+  .round-card {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  .round-card {
+    width: 80%;
+  }
 }
