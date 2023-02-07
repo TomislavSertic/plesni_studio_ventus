@@ -1,0 +1,38 @@
+[
+  {
+    "id": 0,
+    "title": "Samba",
+    "slug": "samba",
+    "imgPath": "/images/samba.jpg"
+  },
+  {
+    "id": 1,
+    "title": "Modern dance",
+    "slug": "modern-dance",
+    "imgPath": "/images/modern-dance.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Latino",
+    "slug": "latino",
+    "imgPath": "/images/latino.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Disco Dance",
+    "slug": "disco-dance",
+    "imgPath": "/images/disco-dance.png"
+  },
+  {
+    "id": 4,
+    "title": "Prvi Ples",
+    "slug": "prvi-ples",
+    "imgPath": "/images/prvi-ples.png"
+  },
+  {
+    "id": 5,
+    "title": "Tango",
+    "slug": "tango",
+    "imgPath": "/images/tango-dance.jpg"
+  }
+]

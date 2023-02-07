@@ -1,0 +1,14 @@
+@import "./../../../styles/variables";
+.upcoming-events {
+  margin: 10rem 0;
+}
+.heading {
+  h2 {
+    @include h2Font;
+    font-weight: 400;
+  }
+  p {
+    @include bodyFontRegular;
+    color: $color-primary-300;
+  }
+}

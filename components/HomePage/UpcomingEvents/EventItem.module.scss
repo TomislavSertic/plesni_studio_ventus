@@ -1,0 +1,55 @@
+@import "./../../../styles/variables";
+.event-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.event-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  .month-short {
+    @include bodyFontRegular;
+    text-transform: uppercase;
+  }
+  .day-big {
+    @include h2Font;
+  }
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: $color-gray-500;
+  .end-start-date {
+    font-weight: 700;
+    @include bodyFontMedium;
+  }
+  h1 {
+    @include h2Font;
+    /*     text-decoration: underline;
+    text-decoration-color: $color-primary-300;
+    text-decoration-thickness: 0.2rem; */
+    font-weight: 300;
+    position: relative;
+    cursor: pointer;
+    &::first-letter {
+      color: $color-primary-300;
+      font-weight: 400;
+    }
+  }
+}
+@media screen and (max-width: $breakpoint-mobile) {
+  .event-date {
+    justify-content: center;
+  }
+  .end-start-date {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    span {
+      line-height: 1rem;
+    }
+  }
+}

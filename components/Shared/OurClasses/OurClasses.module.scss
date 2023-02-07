@@ -1,0 +1,49 @@
+@import "./../../../styles/variables";
+.our-classes {
+  background-image: url("/images/zid-dark.png");
+  background-attachment: fixed;
+  padding: 9rem 0;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0rem;
+    left: 0;
+    height: 3rem;
+    width: 100%;
+    background: #fff;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
+  }
+}
+/* .upper-triangle {
+  position: absolute;
+  background: #fff;
+} */
+.content {
+}
+.header {
+  text-align: center;
+  h1 {
+    color: $color-light;
+    margin-bottom: 1rem;
+    @include h1Font;
+  }
+  p {
+    color: $color-secondary-300;
+    @include bodyFontRegular;
+  }
+  margin-bottom: 5rem;
+}
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 8rem;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: $breakpoint-tablet) {
+}
+@media screen and (max-width: $breakpoint-mobile) {
+  .cards-container {
+    gap: 8rem;
+  }
+}
