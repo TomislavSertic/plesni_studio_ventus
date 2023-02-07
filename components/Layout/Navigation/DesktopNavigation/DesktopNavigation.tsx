@@ -9,7 +9,6 @@ export const DesktopNavigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const onScroll = useCallback(() => {
     const { pageYOffset, scrollY } = window;
-    console.log("yOffset", pageYOffset, "scrollY", scrollY);
     if (pageYOffset !== 0) {
       setScrolled(true);
     } else {

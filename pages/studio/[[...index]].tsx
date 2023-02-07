@@ -10,7 +10,9 @@ export default function StudioPage() {
       <Head>
         <NextStudioHead />
       </Head>
-      <NextStudio config={config} />
+      <div>
+        <NextStudio config={config} />
+      </div>
     </>
   );
 }
