@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./CustomPortableTextComponents.module.scss";
-import { YtPreview } from "../../sanity-schema/youtube";
+import { YtPreview } from "./../sanity/youtube";
 
-import { urlFor } from "../../../lib/sanity.client";
 import Link from "next/link";
+import { urlFor } from "../../lib/sanity.client";
 export const CustomPortableTextComponents = {
   block: {
     h1: ({ children }: any) => {
