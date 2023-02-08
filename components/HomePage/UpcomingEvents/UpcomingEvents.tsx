@@ -1,11 +1,10 @@
 import React from "react";
 import styles from "./UpcomingEvents.module.scss";
 import { Wrapper } from "../../Layout/Wrapper/Wrapper";
-import { GetStaticProps } from "next";
-import { client } from "../../../lib/sanity.client";
 import { EventsList } from "./EventsList";
+import { IEvent } from "../../../types/sanity-types";
 
-export const UpcomingEvents: React.FC<{ events: any }> = ({ events }) => {
+export const UpcomingEvents: React.FC<{ events: IEvent[] }> = ({ events }) => {
   if (!events) {
     return (
       <Wrapper>

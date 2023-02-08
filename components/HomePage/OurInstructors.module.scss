@@ -1,9 +1,62 @@
 @import "./../../styles/variables";
 .our-instructors {
-  background-image: url("/images/backgr2.png");
+  background-image: url("/images/backgr7.png");
   background-attachment: fixed;
   background-position: center;
   padding: 9rem 0;
-  background-size: contain;
+  background-size: cover;
+
+  background-repeat: no-repeat;
   position: relative;
+  min-height: 50vh;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0rem;
+    left: 0;
+    height: 3rem;
+    width: 100%;
+    background: #fff;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
+  }
+}
+
+.content {
+  .title {
+    @include h1Font;
+    text-align: center;
+    color: $color-light;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+  }
+  margin-bottom: 10rem;
+}
+.instructor-container {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.instructor {
+  color: $color-light;
+  text-align: center;
+  h1 {
+    @include h1Font;
+  }
+  .prezime {
+    font-weight: 700;
+  }
+  p {
+    @include bodyFontRegular;
+  }
+}
+@media screen and (max-width: $breakpoint-mobile) {
+  .our-instructors {
+    background-image: url("/images/backgr7.png");
+  }
+  .instructor {
+    h1 {
+      @include h2Font;
+    }
+  }
 }

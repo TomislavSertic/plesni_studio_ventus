@@ -16,7 +16,7 @@ export const NAVIGATIONPATHS = [
   },
   {
     name: "Raspored",
-    path: "/classes",
+    path: "/schedule",
     id: 3,
   },
   {

@@ -6,11 +6,17 @@ import { MiddleCards } from "../components/HomePage/MiddleCards";
 import { OurInstructors } from "../components/HomePage/OurInstructors";
 import { UpcomingEvents } from "../components/HomePage/UpcomingEvents/UpcomingEvents";
 import { HeroSection } from "../components/Layout/HeroSection/HeroSection";
+import { CtaBanner } from "../components/Shared/CtaBanner";
 import { OurClasses } from "../components/Shared/OurClasses/OurClasses";
 import { getTodayDate } from "../lib/helper-functions";
 import { client } from "../lib/sanity.client";
+import { IEvent, INewsCard } from "../types/sanity-types";
 
-const HomePage: React.FC<{ upcomingEvents: any }> = ({ upcomingEvents }) => {
+const HomePage: React.FC<{
+  upcomingEvents: IEvent[];
+  latestNews: INewsCard[];
+}> = ({ upcomingEvents, latestNews }) => {
+  console.log(latestNews);
   return (
     <>
       <Head>
@@ -24,24 +30,36 @@ const HomePage: React.FC<{ upcomingEvents: any }> = ({ upcomingEvents }) => {
       </Head>
       <main>
         <HeroSection bgUrl="/images/hero-image.jpeg">
-          <HeroTitle />
+          <HeroTitle subTitle="kod nas naucite" mainTitle="PLESATI" />
+          <CtaBanner
+            buttonPath="/register"
+            buttonText="Prijavi se"
+            subtitle="Prijavite se i 45-minuta lekcija upoznavanja - potpuno besplatno!!"
+            title="Dobro Došli Novi Studenti"
+          />
         </HeroSection>
         <MiddleCards />
         <OurClasses />
         <UpcomingEvents events={upcomingEvents} />
         <OurInstructors />
-        <LatestNews />
+        <LatestNews latestNews={latestNews} />
       </main>
     </>
   );
 };
 export default HomePage;
 export const getStaticProps: GetStaticProps = async () => {
-  const groqQuery = `\*[_type=='event' && eventStart>="${getTodayDate()}"]`;
-  const data = await client.fetch(groqQuery);
+  const groqQueryEvents = `\*[_type=='event' && eventStart>="${getTodayDate()}"]`;
+  const groqQueryLatestNews = `\*[_type=='post' \|\| _type=='event']{...,
+    categories[]->,
+    author->} \| order(_createdAt desc)[0..2]`;
+  const eventData = await client.fetch(groqQueryEvents);
+  const latestNewsData = await client.fetch(groqQueryLatestNews);
+
   return {
     props: {
-      upcomingEvents: data,
+      upcomingEvents: eventData,
+      latestNews: latestNewsData,
     },
     revalidate: 1000,
   };

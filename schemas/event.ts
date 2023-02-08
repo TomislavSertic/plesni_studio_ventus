@@ -6,6 +6,13 @@ export default defineType({
   type: "document",
   fields: [
     defineField({
+      name: "postType",
+      title: "Post Type",
+      type: "string",
+      readOnly: true,
+      initialValue: "event",
+    }),
+    defineField({
       name: "title",
       title: "Title",
       type: "string",
@@ -75,7 +82,7 @@ export default defineType({
       type: "string",
     }),
     defineField({
-      name: "eventShortDescription",
+      name: "description",
       title: "Kratak opis eventa",
       type: "string",
     }),
