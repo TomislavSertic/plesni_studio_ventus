@@ -1,0 +1,73 @@
+@import "./../../styles/variables";
+.news-card {
+  width: 100%;
+}
+
+.img-container {
+  position: relative;
+  width: 100%;
+  height: 15rem;
+  cursor: pointer;
+  img {
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+  }
+  margin-bottom: 1rem;
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba($color: #000000, $alpha: 0.4);
+    height: 100%;
+    transition: 0.5s all;
+    transform: scale(0);
+  }
+  &:hover {
+    &::before {
+      transform: scale(1);
+    }
+    .plus-icon {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+  .plus-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 11;
+    transition: 0.4s all;
+    path {
+      transition: 0.3s all;
+      fill: $color-light;
+    }
+  }
+}
+.tag-list {
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 0.4rem;
+  span {
+    @include bodyFontSmRegular;
+    color: $color-primary-300;
+  }
+}
+.content {
+  h1 {
+    @include h4Font;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+  p {
+    @include bodyFontSmRegular;
+  }
+  margin-bottom: 1rem;
+}
+.date {
+  color: $color-gray-500;
+}
