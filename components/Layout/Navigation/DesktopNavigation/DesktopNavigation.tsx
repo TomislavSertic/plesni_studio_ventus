@@ -41,7 +41,7 @@ export const DesktopNavigation = () => {
             <div className={styles["logo"]}>
               <Link href="/">
                 <Image
-                  src="/images/main-logo.png"
+                  src="/images/main-logo4.png"
                   width={80}
                   height={80}
                   alt="Plesni Studio Ventus logo"

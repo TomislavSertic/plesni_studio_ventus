@@ -1,6 +1,6 @@
 @import "./../../styles/variables";
 .our-instructors {
-  background-image: url("/images/backgr3.png");
+  background-image: url("/images/backgr7.png");
   background-attachment: fixed;
   background-position: center;
   padding: 9rem 0;
@@ -26,13 +26,14 @@
     @include h1Font;
     text-align: center;
     color: $color-light;
+    font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 5rem;
   }
   margin-bottom: 10rem;
 }
 .instructor-container {
-  padding: 0 5%;
+  padding: 0;
   display: flex;
   justify-content: space-between;
 }
@@ -51,7 +52,7 @@
 }
 @media screen and (max-width: $breakpoint-mobile) {
   .our-instructors {
-    background-image: url("/images/backgr4.png");
+    background-image: url("/images/backgr7.png");
   }
   .instructor {
     h1 {
