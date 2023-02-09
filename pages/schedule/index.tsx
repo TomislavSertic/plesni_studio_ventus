@@ -5,11 +5,11 @@ import { HeroSection } from "../../components/Layout/HeroSection/HeroSection";
 import { CtaBanner } from "../../components/Shared/CtaBanner";
 import { OurClasses } from "../../components/Shared/OurClasses/OurClasses";
 
-const ClassesPage = () => {
+const SchedulePage = () => {
   return (
     <>
       <Head>
-        <title>Ventus - O Nama</title>
+        <title>Ventus - Raspored</title>
         <meta
           name="description"
           content="Plesni studio Ventus.Prvi ples lekcije,moderni ples,samba, tango, latino plesovi.Domagoj Sertić i Korina vrhunski nagrađivani instruktori plesa."
@@ -19,7 +19,7 @@ const ClassesPage = () => {
       </Head>
       <main>
         <HeroSection bgUrl="/images/hero-image.jpeg">
-          <HeroTitle mainTitle="O Nama" subTitle="" />
+          <HeroTitle mainTitle="Raspored" subTitle="" />
           <CtaBanner
             buttonPath="/register"
             buttonText="Prijavi se"
@@ -31,4 +31,4 @@ const ClassesPage = () => {
     </>
   );
 };
-export default ClassesPage;
+export default SchedulePage;

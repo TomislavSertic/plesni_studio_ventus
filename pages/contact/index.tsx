@@ -1,8 +1,6 @@
 import Head from "next/head";
 import React from "react";
 import { HeroTitle } from "../../components/HomePage/HeroTitle";
-import { HeroSection } from "../../components/Layout/HeroSection/HeroSection";
-import { CtaBanner } from "../../components/Shared/CtaBanner";
 
 const ContactPage = () => {
   return (
