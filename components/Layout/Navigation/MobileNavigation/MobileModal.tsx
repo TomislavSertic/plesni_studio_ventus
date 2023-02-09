@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import styles from "./MobileModal.module.scss";
+import { NavigationList } from "./NavigationList";
 export const MobileModal: React.FC<{ closeNav: Function }> = ({ closeNav }) => {
   const closeNavigation = () => {
     closeNav();
@@ -14,6 +15,9 @@ export const MobileModal: React.FC<{ closeNav: Function }> = ({ closeNav }) => {
           height={48}
           alt="close mobile navigation icon"
         />
+      </div>
+      <div className={styles["list-container"]}>
+        <NavigationList closeModal={closeNavigation} />
       </div>
       <div className={styles["logo"]}>
         <Image

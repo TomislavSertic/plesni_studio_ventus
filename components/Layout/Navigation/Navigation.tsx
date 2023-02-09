@@ -34,8 +34,32 @@ export const Navigation = () => {
         <div className={styles["container"]}>
           {!scrolled && (
             <div className={styles.contact}>
-              <p>Email: domagoj.sertic@gmail.com</p> <span>-</span>
-              <p>Mobitel: 091-252-2235</p>
+              <p className={styles["contact-item"]}>
+                <span className={styles.icon}>
+                  <Image
+                    alt="email icon"
+                    src="/icons/mail-dark.png"
+                    width={18}
+                    height={18}
+                  />
+                </span>
+                <a href="mailto:domagoj.sertic@gmail.com">
+                  domagoj.sertic@gmail.com
+                </a>
+              </p>{" "}
+              <span className={styles.separator}>-</span>
+              <p className={styles["contact-item"]}>
+                {" "}
+                <span className={styles.icon}>
+                  <Image
+                    alt="email icon"
+                    src="/icons/phone-dark.png"
+                    width={18}
+                    height={18}
+                  />
+                </span>{" "}
+                091-252-2235
+              </p>
             </div>
           )}
           <div className={styles["nav-container"]}>

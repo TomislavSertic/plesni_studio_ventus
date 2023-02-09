@@ -1,4 +1,68 @@
 @import "./../../../styles/variables";
 .footer {
-  background-image: url("/images/");
+  background: $color-secondary-900;
+  padding: 7rem 0;
+}
+.logo {
+  margin: 6rem 0;
+  display: flex;
+  justify-content: center;
+}
+.logo-text {
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s;
+  color: $color-light;
+  span {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    margin: 0.2rem 0;
+    transition: all 0.3s;
+  }
+}
+.social-icons {
+  margin: 0 0 5rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  .icon {
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      filter: brightness(0.7) grayscale(1);
+      transition: 0.4s all;
+      &:hover {
+        filter: none;
+      }
+    }
+  }
+}
+.legal {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  color: $color-secondary-300;
+}
+@media (max-width: $breakpoint-tablet) {
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .social-icons {
+    .icon {
+      img {
+        filter: brightness(0.9);
+      }
+    }
+  }
+  .legal {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    .separator {
+      display: none;
+    }
+  }
 }
