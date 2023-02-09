@@ -30,3 +30,14 @@
   font-size: 12rem;
   letter-spacing: 2rem;
 }
+@media screen and (max-width: $breakpoint-mobile) {
+  .hero-title {
+    min-height: 50rem;
+  }
+  .titleMain {
+    font-size: 5rem;
+  }
+  .titleLower {
+    font-size: 3rem;
+  }
+}

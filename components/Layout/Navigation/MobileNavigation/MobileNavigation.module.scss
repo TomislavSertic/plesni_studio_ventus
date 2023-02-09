@@ -1,0 +1,10 @@
+@import "./../../../../styles/variables";
+
+.mobile-navigation {
+  display: none;
+}
+@media screen and (max-width: $breakpoint-mobile) {
+  .mobile-navigation {
+    display: block;
+  }
+}
