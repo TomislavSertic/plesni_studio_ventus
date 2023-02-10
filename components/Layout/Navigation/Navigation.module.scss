@@ -78,3 +78,20 @@
     }
   }
 }
+@media (max-width: $breakpoint-mobile) {
+  .navigation {
+    padding: 1rem;
+  }
+  .contact {
+    padding-right: 0;
+    font-size: 1.1rem;
+    flex-wrap: wrap;
+    img {
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+    .separator {
+      margin: 0 0.4rem;
+    }
+  }
+}
