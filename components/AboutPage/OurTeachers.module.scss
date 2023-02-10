@@ -1,0 +1,24 @@
+@import "./../../styles/variables";
+.our-teachers {
+  background: url("/images/zid-dark.png");
+  padding: 5rem 0;
+}
+.header {
+  text-align: center;
+  h1 {
+    color: $color-light;
+    @include h1Font;
+    font-weight: 300;
+  }
+  h4 {
+    @include bodyFontRegular;
+    color: $color-primary-500;
+  }
+  margin-bottom: 6rem;
+}
+.cards-list {
+  margin: 3rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

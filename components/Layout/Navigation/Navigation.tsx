@@ -43,8 +43,8 @@ export const Navigation = () => {
                     height={18}
                   />
                 </span>
-                <a href="mailto:domagoj.sertic@gmail.com">
-                  domagoj.sertic@gmail.com
+                <a href="mailto:plesni.studio.ventus@gmail.com">
+                  plesni.studio.ventus@gmail.com
                 </a>
               </p>{" "}
               <span className={styles.separator}>-</span>
@@ -58,7 +58,7 @@ export const Navigation = () => {
                     height={18}
                   />
                 </span>{" "}
-                091-252-2235
+                +385914455915
               </p>
             </div>
           )}

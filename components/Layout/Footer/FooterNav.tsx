@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import styles from "./FooterNav.module.scss";
+import Image from "next/image";
 export const FooterNav = () => {
   return (
     <nav className={styles["footer-nav"]}>
@@ -8,11 +9,11 @@ export const FooterNav = () => {
         <h2>Contacts</h2>
         <ul className={styles["footer-group__list"]}>
           <li>
-            <a href="mailto:domagoj.sertic@gmail.com">
-              domagoj.sertic@gmail.com
+            <a href="mailto:plesni.studio.ventus@gmail.com">
+              plesni.studio.ventus@gmail.com
             </a>
           </li>
-          <li>1-002-448-568</li>
+          <li>+385914455915</li>
         </ul>
       </div>
       <div className={styles["footer-group"]}>

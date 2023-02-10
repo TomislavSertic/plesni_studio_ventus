@@ -18,7 +18,7 @@ const ClassesPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <HeroSection bgUrl="/images/hero-image.jpeg">
+        <HeroSection bgUrl="/images/plesovi-bg.webp">
           <HeroTitle mainTitle="PLESOVI" subTitle="" />
           <CtaBanner
             buttonPath="/register"

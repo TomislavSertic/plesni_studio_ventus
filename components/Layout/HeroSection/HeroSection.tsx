@@ -13,7 +13,7 @@ export const HeroSection: React.FC<{
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
-        backgroundPosition: "center",
+        backgroundPosition: "top center",
       }}
     >
       <div className={styles["topDecoration"]}></div>
