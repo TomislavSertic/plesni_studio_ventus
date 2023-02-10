@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  text-transform: uppercase;
 }
 .shadow {
   position: absolute;
@@ -27,7 +28,7 @@
   text-transform: uppercase;
 }
 .titleMain {
-  font-size: 12rem;
+  font-size: 11rem;
   letter-spacing: 2rem;
 }
 @media screen and (max-width: $breakpoint-mobile) {

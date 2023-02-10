@@ -1,0 +1,92 @@
+@import "./../../styles/variables";
+.testimonials-anchor {
+  position: absolute;
+  top: -6rem;
+}
+.header {
+  text-align: center;
+  h1 {
+    @include h1Font;
+    font-weight: 400;
+  }
+  h4 {
+    color: $color-primary-300;
+    @include h4Font;
+    font-weight: 400;
+  }
+  margin-bottom: 4rem;
+}
+.student-testimonials {
+  margin: 5rem 0;
+}
+.testimonials-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .testimonial:nth-child(1) {
+    border-right: 0.25rem solid rgba($color-gray-100, 0.3);
+    border-bottom: 0.25rem solid rgba($color-gray-100, 0.3);
+  }
+  .testimonial:nth-child(2) {
+    border-left: 0.25rem solid rgba($color-gray-100, 0.3);
+    border-bottom: 0.25rem solid rgba($color-gray-100, 0.3);
+  }
+  .testimonial:nth-child(3) {
+    border-right: 0.25rem solid rgba($color-gray-100, 0.3);
+    border-top: 0.25rem solid rgba($color-gray-100, 0.3);
+  }
+  .testimonial:nth-child(4) {
+    border-left: 0.25rem solid rgba($color-gray-100, 0.3);
+    border-top: 0.25rem solid rgba($color-gray-100, 0.3);
+  }
+}
+.testimonial {
+  width: 49%;
+  padding: 4rem 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  .quote {
+    font-size: 5rem;
+    position: absolute;
+    top: -0.4rem;
+    left: 2rem;
+    color: $color-primary-300;
+  }
+  .content {
+    @include bodyFontRegular;
+    margin-bottom: 3rem;
+  }
+}
+.author {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  .info {
+    .name {
+      @include bodyFontSmRegular;
+      font-weight: 700;
+    }
+    .class {
+      color: $color-primary-300;
+    }
+  }
+  .portrait {
+    img {
+      border-radius: 50%;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .testimonials-wrapper {
+    .testimonial {
+      width: 100%;
+      border-top: 0.25rem solid rgba($color-gray-100, 0.3);
+      border-bottom: 0.25rem solid rgba($color-gray-100, 0.3);
+      border-right: none;
+      border-left: none;
+    }
+  }
+}

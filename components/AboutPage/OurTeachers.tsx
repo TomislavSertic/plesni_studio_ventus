@@ -9,7 +9,7 @@ export const OurTeachers = () => {
       <Wrapper>
         <div className={styles["header"]}>
           <h1>Instruktori</h1>
-          <h4>Vrhunski Stručnjaci</h4>
+          <h4>Iskustvo - Znanje - Strast</h4>
         </div>
         <div className={styles["cards-list"]}>
           {INSTRUCTORS.map((instructor) => {

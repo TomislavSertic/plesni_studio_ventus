@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import { OurTeachers } from "../../components/AboutPage/OurTeachers";
+import { StudentTestimonials } from "../../components/AboutPage/StudentTestimonials";
 import { Welcome } from "../../components/AboutPage/Welcome";
 import { HeroTitle } from "../../components/HomePage/HeroTitle";
 import { OurInstructors } from "../../components/HomePage/OurInstructors";
@@ -32,6 +33,7 @@ const ClassesPage = () => {
         </HeroSection>
         <Welcome />
         <OurTeachers />
+        <StudentTestimonials />
       </main>
     </>
   );
