@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { GetStaticProps } from "next/types";
+import { OurTeachers } from "../components/AboutPage/OurTeachers";
 import { HeroTitle } from "../components/HomePage/HeroTitle";
 import { LatestNews } from "../components/HomePage/LatestNews";
 import { MiddleCards } from "../components/HomePage/MiddleCards";
@@ -41,7 +42,8 @@ const HomePage: React.FC<{
         <MiddleCards />
         <OurClasses />
         <UpcomingEvents events={upcomingEvents} />
-        <OurInstructors />
+        {/*  <OurInstructors /> */}
+        <OurTeachers />
         <LatestNews latestNews={latestNews} />
       </main>
     </>

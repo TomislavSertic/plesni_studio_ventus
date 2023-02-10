@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Josip Đerek & Ivana Đerek",
+    "danceType": "Prvi Ples",
+    "testimonial": "Moja iskustva sa plesnim tečajem bila su sjajna! Instruktor je bio vrlo stručan i imao je strast prema plesu koja se prenosila na nas polaznike. Njegova fleksibilnost kada je u pitanju raspored lekcija bila je nevjerojatna i to mi je omogućilo da pratim tečaj bez problema.",
+    "image": "/images/klijenti/josip-djerek.png"
+  },
+  {
+    "name": "Mateja Vidaković",
+    "danceType": "Latino",
+    "testimonial": "Ovaj tečaj latino plesa me preobratio u plesača! Instruktor je bio vrhunski u svom poslu i njegova strast prema plesu je bila zarazna. Nisam ni znala da sam toliko talentirana za ples,bar se tiješim,  a on me naučio svemu što trebam znati",
+    "image": "/images/klijenti/mateja-vidakovic.png"
+  },
+  {
+    "name": "Mislav Sučec",
+    "danceType": "Prvi Ples",
+    "testimonial": "Instruktor nam je pružio nevjerojatne lekcije za naš prvi ples i bilo je neverovatno kako se brzo prilagodio našem vremenskom rasporedu.Osjećali smo se kao da smo učili od najboljeg i u malo sati nas je pripremio za prvi ples",
+    "image": "/images/klijenti/mislav-sucec.png"
+  },
+  {
+    "name": "Tomislav Horvat",
+    "danceType": "Latino",
+    "testimonial": "Naučio sam više u ovom tečaju latino plesa nego što sam ikada pomislio da ću. Instruktorova stručnost i strast za ples bili su izvanredni i njegova sposobnost da nas motivira i inspirira bila je neverovatna. Sada uživam u plesanju i ne bih zamijenila svoje iskustvo za ništa na svijetu.",
+    "image": "/images/klijenti/tomislav-horvat.png"
+  }
+]

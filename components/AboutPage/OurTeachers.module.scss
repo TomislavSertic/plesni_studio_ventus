@@ -1,6 +1,7 @@
 @import "./../../styles/variables";
 .our-teachers {
   background: url("/images/zid-dark.png");
+  background-attachment: fixed;
   padding: 5rem 0;
 }
 .header {
@@ -21,4 +22,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+@media (max-width: $breakpoint-tablet) {
+  .cards-list {
+    gap: 4rem;
+  }
 }

@@ -10,7 +10,7 @@ export const InstructorCard: React.FC<{ instructorData: IInstructorData }> = ({
   return (
     <div className={styles["instructor-card"]}>
       <div className={styles["image-container"]}>
-        <Image src={image} alt={name} width={150} height={150} />
+        <Image src={image} alt={name} width={200} height={200} />
       </div>
       <p className={styles["name"]}>{name}</p>
       <p className={styles["title"]}>{title}</p>
