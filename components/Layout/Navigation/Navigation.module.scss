@@ -18,12 +18,25 @@
   align-items: center;
 }
 .contact {
+  padding-right: 1rem;
   display: flex;
   align-self: end;
-  color: $color-primary-500;
+
+  color: $color-secondary-500;
   text-transform: uppercase;
   @include bodyFontSmRegular;
-  span {
+  .contact-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      margin-top: 0.2rem;
+    }
+  }
+  .icon {
+    margin-right: 0.5rem;
+  }
+  .separator {
     margin: 0 1rem;
   }
 }

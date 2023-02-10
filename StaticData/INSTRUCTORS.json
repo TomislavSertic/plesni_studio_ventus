@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Domagoj Sertić",
+    "title": "Instruktor Plesa",
+    "image": "/images/domagoj-sertic.png",
+    "socials": [
+      {
+        "name": "Instagram",
+        "url": "https://www.instagram.com/serta_98"
+      },
+      {
+        "name": "Facebook",
+        "url": "https://google.com"
+      },
+      {
+        "name": "Youtube",
+        "url": "https://google.com"
+      }
+    ],
+    "description": "Domagoj Sertić se plesom bavi od 2006. godine. Završio je Umjetničku plesnu školu Silvije Hercigonje te je više puta bio prvak u standardnim i latinsko američkim plesovima te u suvremenom plesu. Podučava više od 20 stilova plesa te se i dalje aktivno bavi sportskim plesom uz svoju plesnu partnericu Korinu Kovačić. "
+  },
+  {
+    "name": "Korina Kovačić",
+    "title": "Instruktorica Plesa",
+    "image": "/images/korina-kovacic.png",
+    "socials": [
+      {
+        "name": "Instagram",
+        "url": "https://www.instagram.com/korina.kovacic.27"
+      },
+      {
+        "name": "Facebook",
+        "url": "https://google.com"
+      },
+      {
+        "name": "Youtube",
+        "url": "https://google.com"
+      }
+    ],
+    "description": "Korina pleše od svoje šeste godine. Od 2016. godine započinje s natjecanjem kao solo plesačica i ostvaruje uspješne rezultate, a kasnije isto tako i sa svojim plesnim partnerom. S njim ima cilj prenositi svoje znanje i ljubav prema plesu."
+  }
+]

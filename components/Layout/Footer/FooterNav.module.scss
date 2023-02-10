@@ -1,0 +1,70 @@
+@import "./../../../styles/variables";
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.footer-group {
+  text-align: left;
+  width: 20%;
+  h2 {
+    position: relative;
+    color: $color-light;
+    @include h3FontRegular;
+    margin-bottom: 1.7rem;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 20%;
+      height: 0.2rem;
+      bottom: -0.3rem;
+      left: 0;
+      background: $color-primary-500;
+    }
+  }
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    color: $color-secondary-300;
+    @include bodyFontRegular;
+  }
+}
+.footer-group__list {
+  li {
+    margin-bottom: 1rem;
+  }
+  a {
+    cursor: pointer;
+    transition: 0.4s all;
+    &:hover {
+      color: $color-primary-500;
+    }
+  }
+}
+@media (max-width: $breakpoint-tablet) {
+  .footer-group {
+    width: 40%;
+    margin-bottom: 3.5rem;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .footer-group {
+    padding: 0;
+    text-align: center;
+    width: 80%;
+    h2 {
+      &::after {
+        position: absolute;
+        content: "";
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+  .footer-group:last-child {
+    margin-bottom: 0;
+  }
+}

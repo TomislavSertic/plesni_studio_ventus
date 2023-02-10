@@ -1,0 +1,42 @@
+@import "./../../styles/variables";
+
+.welcome {
+  margin: 10rem 0;
+}
+.header {
+  text-align: center;
+  h1 {
+    @include h1Font;
+    font-weight: 400;
+  }
+  h4 {
+    @include h4Font;
+    color: $color-primary-500;
+  }
+  margin-bottom: 6rem;
+}
+
+.questions-container {
+  padding: 0 4rem;
+}
+.question {
+  h3 {
+    @include h2Font;
+    color: $color-primary-500;
+    margin-bottom: 1rem;
+  }
+  p {
+    @include bodyFontMedium;
+    margin-bottom: 1.5rem;
+    line-height: 2.5rem;
+  }
+  margin-bottom: 4rem;
+}
+@media (max-width: $breakpoint-mobile) {
+  .welcome {
+    margin: 6rem 0;
+  }
+  .questions-container {
+    padding: 0 1rem;
+  }
+}

@@ -29,8 +29,8 @@ const HomePage: React.FC<{
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <HeroSection bgUrl="/images/hero-image.jpeg">
-          <HeroTitle subTitle="kod nas naucite" mainTitle="PLESATI" />
+        <HeroSection bgUrl="/images/hero-image.webp">
+          <HeroTitle subTitle="kod nas naučite" mainTitle="PLESATI" />
           <CtaBanner
             buttonPath="/register"
             buttonText="Prijavi se"

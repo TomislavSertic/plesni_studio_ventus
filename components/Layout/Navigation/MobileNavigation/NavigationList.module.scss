@@ -1,0 +1,12 @@
+@import "./../../../../styles/variables";
+.navigation-list {
+  list-style: none;
+}
+.navigation-item {
+  color: $color-light;
+  @include h3FontRegular;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+
+  letter-spacing: 0.4rem;
+}

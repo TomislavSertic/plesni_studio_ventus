@@ -2,6 +2,7 @@ import React from "react";
 import { Navigation } from "./Navigation/Navigation";
 import styles from "./Layout.module.scss";
 import { useRouter } from "next/router";
+import { Footer } from "./Footer/Footer";
 export const Layout: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
@@ -13,6 +14,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
     <div className={styles.layout}>
       <Navigation />
       {children}
+      <Footer />
     </div>
   );
 };

@@ -1,6 +1,9 @@
 import Head from "next/head";
 import React from "react";
+import { OurTeachers } from "../../components/AboutPage/OurTeachers";
+import { Welcome } from "../../components/AboutPage/Welcome";
 import { HeroTitle } from "../../components/HomePage/HeroTitle";
+import { OurInstructors } from "../../components/HomePage/OurInstructors";
 import { HeroSection } from "../../components/Layout/HeroSection/HeroSection";
 import { CtaBanner } from "../../components/Shared/CtaBanner";
 import { OurClasses } from "../../components/Shared/OurClasses/OurClasses";
@@ -18,7 +21,7 @@ const ClassesPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <HeroSection bgUrl="/images/hero-image.jpeg">
+        <HeroSection bgUrl="/images/aboutus-bg.png">
           <HeroTitle mainTitle="O Nama" subTitle="" />
           <CtaBanner
             buttonPath="/register"
@@ -27,6 +30,8 @@ const ClassesPage = () => {
             title="Bogati izbor ponude plesova"
           />
         </HeroSection>
+        <Welcome />
+        <OurTeachers />
       </main>
     </>
   );
