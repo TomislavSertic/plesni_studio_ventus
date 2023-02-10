@@ -4,6 +4,7 @@ import { HeroTitle } from "../../components/HomePage/HeroTitle";
 import { HeroSection } from "../../components/Layout/HeroSection/HeroSection";
 import { CtaBanner } from "../../components/Shared/CtaBanner";
 import { OurClasses } from "../../components/Shared/OurClasses/OurClasses";
+import { WhatYouGet } from "../../components/Shared/WhatYouGet";
 
 const ClassesPage = () => {
   return (
@@ -26,6 +27,7 @@ const ClassesPage = () => {
             title="Dobro Došli Novi Studenti"
           />
         </HeroSection>
+        <WhatYouGet />
         <OurClasses />
       </main>
     </>
