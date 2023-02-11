@@ -20,7 +20,7 @@ const SchedulePage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <HeroSection bgUrl="/images/classes-bg.jpg">
+        <HeroSection bgUrl="/images/classes-bg.webp">
           <HeroTitle mainTitle="Raspored" subTitle="" />
           <CtaBanner
             buttonPath="/register"

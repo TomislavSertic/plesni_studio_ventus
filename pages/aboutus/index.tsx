@@ -22,7 +22,7 @@ const ClassesPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <HeroSection bgUrl="/images/aboutus-bg.png">
+        <HeroSection bgUrl="/images/aboutus-bg.webp">
           <HeroTitle mainTitle="O Nama" subTitle="" />
           <CtaBanner
             buttonPath="/register"
