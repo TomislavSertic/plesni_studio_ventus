@@ -24,3 +24,9 @@ export interface INewsCard {
   description: string;
   publishedAt: string;
 }
+export interface IClass {
+  class: string;
+  level: string;
+  timeStart: string;
+  timeEnd: string;
+}
