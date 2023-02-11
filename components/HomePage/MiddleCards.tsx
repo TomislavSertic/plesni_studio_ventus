@@ -19,7 +19,7 @@ const CARDSDATA = [
     description:
       "Plesni Studio Ventus je mjesto gdje ljudi dolaze kako bi naučili plesati i razvili svoje plesne sposobnosti. Instruktori plesa takodjer pružaju personalizirane lekcije i podršku svakom polazniku.",
     urlPath: "/aboutus",
-    imageUrl: "/images/aboutus-card.jpeg",
+    imageUrl: "/images/aboutus-card.webp",
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const CARDSDATA = [
     description:
       "Naši polaznici su vrlo zadovoljni. Izdvojili smo par lijepih rečenica i od njih.",
     urlPath: "/aboutus#student-testimonials",
-    imageUrl: "/images/client-review-card.jpeg",
+    imageUrl: "/images/client-review-card.webp",
   },
 ];
 export const MiddleCards = () => {
