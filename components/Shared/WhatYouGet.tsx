@@ -9,7 +9,7 @@ export const WhatYouGet = () => {
         <div className={styles["image-container"]}>
           <Image
             alt="girl jumping with happines in her eyes"
-            src="/images/dance-illustration.jpg"
+            src="/images/dance-illustration.webp"
             width={500}
             height={500}
           />

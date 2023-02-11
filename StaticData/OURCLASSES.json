@@ -3,7 +3,7 @@
     "id": 0,
     "title": "Samba",
     "slug": "samba",
-    "imgPath": "/images/samba.jpg"
+    "imgPath": "/images/samba.webp"
   },
   {
     "id": 1,
@@ -33,6 +33,6 @@
     "id": 5,
     "title": "Tango",
     "slug": "tango",
-    "imgPath": "/images/tango-dance.jpg"
+    "imgPath": "/images/tango-dance.webp"
   }
 ]
