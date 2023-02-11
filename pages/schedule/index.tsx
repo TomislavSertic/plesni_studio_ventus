@@ -1,9 +1,11 @@
 import Head from "next/head";
 import React from "react";
+import { OurTeachers } from "../../components/AboutPage/OurTeachers";
 import { HeroTitle } from "../../components/HomePage/HeroTitle";
 import { HeroSection } from "../../components/Layout/HeroSection/HeroSection";
 import { CtaBanner } from "../../components/Shared/CtaBanner";
 import { OurClasses } from "../../components/Shared/OurClasses/OurClasses";
+import { Schedule } from "../../components/Shared/Schedule";
 
 const SchedulePage = () => {
   return (
@@ -18,7 +20,7 @@ const SchedulePage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <HeroSection bgUrl="/images/hero-image.jpeg">
+        <HeroSection bgUrl="/images/classes-bg.jpg">
           <HeroTitle mainTitle="Raspored" subTitle="" />
           <CtaBanner
             buttonPath="/register"
@@ -27,6 +29,8 @@ const SchedulePage = () => {
             title="Odaberi savršeno vrijeme za sat plesa"
           />
         </HeroSection>
+        <Schedule />
+        <OurTeachers />
       </main>
     </>
   );

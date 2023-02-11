@@ -1,0 +1,80 @@
+@import "./../../styles/variables";
+
+.schedule {
+  margin: 5rem 0 10rem 0;
+}
+.mobile-table {
+  display: none;
+  .day {
+    @include h2Font;
+    font-weight: 300;
+  }
+  .classes-list {
+    padding: 2rem;
+  }
+  .lesson {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+    border: 1px solid rgba($color-gray-100, 0.4);
+    h2 {
+      color: $color-gray-500;
+    }
+    time {
+      @include bodyFontRegular;
+    }
+  }
+}
+.desktop-table {
+  width: 100%;
+  tr {
+    display: flex;
+    text-align: center;
+    th {
+      width: 15%;
+      background: rgba($color-gray-100, 0.1);
+      padding: 1rem 0;
+      @include bodyFontRegular;
+    }
+    td {
+      width: 15%;
+      min-height: 12rem;
+      padding: 1rem;
+    }
+    .td-value {
+      border: 1px solid rgba($color-gray-100, 0.4);
+      transition: 0.3s all;
+      &:hover {
+        background-color: $color-primary-300;
+        .class-level,
+        .class-name,
+        .time {
+          color: $color-light;
+          transition: 0.3s all;
+        }
+      }
+      .class-name {
+        @include bodyFontMedium;
+      }
+      .class-level {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+      .time {
+        color: $color-primary-300;
+        @include h3FontMedium;
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpoint-mobile) {
+  .schedule {
+    margin: 5rem 0;
+  }
+  .desktop-table {
+    display: none;
+  }
+  .mobile-table {
+    display: block;
+  }
+}
