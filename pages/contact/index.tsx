@@ -1,6 +1,8 @@
 import Head from "next/head";
 import React from "react";
-import { HeroTitle } from "../../components/HomePage/HeroTitle";
+import { HeroTitle } from "../../components/UI/HeroTitle";
+import { CtaBanner } from "../../components/Shared/CtaBanner";
+import { ContactInfo } from "../../components/ContactPage/ContactInfo";
 
 const ContactPage = () => {
   return (
@@ -9,15 +11,14 @@ const ContactPage = () => {
         <title>Ventus - Kontakt</title>
         <meta
           name="description"
-          content="Plesni studio Ventus.Prvi ples lekcije,moderni ples,samba, tango, latino plesovi.Domagoj Sertić i Korina vrhunski nagrađivani instruktori plesa."
+          content="Plesni studio Ventus. Lokacija Zagreb . email: plesni.studio.ventus@gmail.com . telefon: +385914455915 ."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div>
-          <HeroTitle mainTitle="Kontakt" subTitle="" />
-        </div>
+        <HeroTitle title="Kontakt" />
+        <ContactInfo />
       </main>
     </>
   );

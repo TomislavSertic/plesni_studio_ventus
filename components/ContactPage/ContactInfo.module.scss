@@ -1,0 +1,45 @@
+@import "./../../styles/variables";
+
+.contact-info {
+  margin: 5rem 0;
+  display: flex;
+  gap: 6rem;
+}
+.intro-text {
+  flex: 1;
+  h1 {
+    @include h2Font;
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+  p {
+    @include bodyFontRegular;
+    margin-bottom: 0.5rem;
+  }
+}
+.information-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  h2 {
+    @include h2Font;
+    font-weight: 300;
+  }
+}
+.information-list {
+  list-style: none;
+  padding: 2rem 0;
+  .contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+    text-transform: uppercase;
+    @include bodyFontRegular;
+  }
+}
+@media (max-width: $breakpoint-mobile) {
+  .contact-info {
+    flex-direction: column;
+  }
+}

@@ -17,7 +17,6 @@ const HomePage: React.FC<{
   upcomingEvents: IEvent[];
   latestNews: INewsCard[];
 }> = ({ upcomingEvents, latestNews }) => {
-  console.log(latestNews);
   return (
     <>
       <Head>
