@@ -8,7 +8,6 @@ export const InstructorCard: React.FC<{ instructorData: IInstructorData }> = ({
   instructorData,
 }) => {
   const { image, title, name, description, socials } = instructorData;
-  console.log(instructorData);
   const renderSocialIcons = (social: { name: string; url: string }) => {
     if (social.name.toLowerCase() === "facebook") {
       return (

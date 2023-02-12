@@ -50,7 +50,6 @@ export const Schedule = () => {
       let td = [];
       for (let key of objectKeys) {
         if (SCHEDULE[key].classes[i]) {
-          console.log(SCHEDULE[key].classes[i]);
           td.push(
             <td key={Math.random()} className={styles["td-value"]}>
               <p className={styles["class-name"]}>

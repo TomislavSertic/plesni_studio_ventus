@@ -20,8 +20,8 @@ export const NAVIGATIONPATHS = [
     id: 3,
   },
   {
-    name: "Blog",
-    path: "/blog",
+    name: "Vijesti",
+    path: "/news",
     id: 4,
   },
   {

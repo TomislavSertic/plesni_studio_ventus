@@ -13,7 +13,9 @@ export const FooterNav = () => {
               plesni.studio.ventus@gmail.com
             </a>
           </li>
-          <li>+385914455915</li>
+          <li>
+            <a href="tel:+385914455915">+385914455915</a>
+          </li>
         </ul>
       </div>
       <div className={styles["footer-group"]}>

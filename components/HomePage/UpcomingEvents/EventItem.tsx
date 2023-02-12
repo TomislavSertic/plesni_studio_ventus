@@ -5,7 +5,6 @@ import styles from "./EventItem.module.scss";
 export const EventItem: React.FC<{ event: IEvent }> = ({ event }) => {
   const eventDateStart = event.eventStart;
   const eventDateEnd = event.eventEnd;
-  console.log(eventDateStart);
   const eventStartTime = new Date(eventDateStart).toLocaleTimeString("en-GB");
   const eventStartDate = new Date(eventDateStart).toLocaleDateString("en-us", {
     month: "long",
@@ -21,7 +20,6 @@ export const EventItem: React.FC<{ event: IEvent }> = ({ event }) => {
     day: "2-digit",
   });
   const slug = event.slug.current;
-  console.log(eventStartDate, eventStartTime, eventStartMonth);
   return (
     <li className={styles["event-item"]}>
       <div className={styles["event-date"]}>
