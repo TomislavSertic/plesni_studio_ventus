@@ -1,4 +1,8 @@
 @import "./../../../styles/variables";
+.classes-anchor {
+  position: absolute;
+  top: -7rem;
+}
 .our-classes {
   background-image: url("/images/zid-dark.webp");
   background-attachment: fixed;

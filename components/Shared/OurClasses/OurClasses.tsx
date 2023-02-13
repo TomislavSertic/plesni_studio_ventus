@@ -8,6 +8,9 @@ export const OurClasses = () => {
   const [danceClasses, setDanceClasses] = useState(OURCLASSES);
   return (
     <div className={styles["our-classes"]}>
+      <div className={styles["classes-anchor"]} id="our-classes">
+        {" "}
+      </div>
       {/* <div className={styles["upper-triangle"]}></div> */}
       <Wrapper>
         <div className={styles["content"]}>

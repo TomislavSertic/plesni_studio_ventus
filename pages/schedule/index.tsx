@@ -24,7 +24,7 @@ const SchedulePage = () => {
         <HeroSection bgUrl="/images/classes-bg.webp">
           <HeroTitle mainTitle="Raspored" subTitle="" />
           <CtaBanner
-            buttonPath="/register"
+            buttonPath="#free-lesson"
             buttonText="Prijavi se"
             subtitle="Prijavite se i 45-minuta lekcija upoznavanja - potpuno besplatno!!"
             title="Odaberi savršeno vrijeme za sat plesa"

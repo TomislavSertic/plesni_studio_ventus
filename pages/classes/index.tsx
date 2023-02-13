@@ -3,6 +3,7 @@ import React from "react";
 import { HeroTitle } from "../../components/HomePage/HeroTitle";
 import { HeroSection } from "../../components/Layout/HeroSection/HeroSection";
 import { CtaBanner } from "../../components/Shared/CtaBanner";
+import { FreeLessonSignup } from "../../components/Shared/FreeLessonSignup";
 import { OurClasses } from "../../components/Shared/OurClasses/OurClasses";
 import { WhatYouGet } from "../../components/Shared/WhatYouGet";
 
@@ -22,13 +23,14 @@ const ClassesPage = () => {
         <HeroSection bgUrl="/images/plesovi-bg.webp">
           <HeroTitle mainTitle="PLESOVI" subTitle="" />
           <CtaBanner
-            buttonPath="/register"
-            buttonText="Prijavi se"
+            buttonPath="#free-lesson"
+            buttonText="Prijavi se za besplatni sat"
             title="Dobro Došli Novi Studenti"
           />
         </HeroSection>
         <WhatYouGet />
         <OurClasses />
+        <FreeLessonSignup />
       </main>
     </>
   );
