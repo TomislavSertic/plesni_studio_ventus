@@ -1,0 +1,20 @@
+@import "./../../styles/variables";
+
+.form-status {
+  text-align: center;
+  h1 {
+    @include h1Font;
+    color: $color-state-success;
+    margin-bottom: 2rem;
+  }
+  p {
+    @include bodyFontRegular;
+    color: $color-state-success;
+  }
+}
+
+.form-error {
+  h1 {
+    color: $color-state-warning;
+  }
+}

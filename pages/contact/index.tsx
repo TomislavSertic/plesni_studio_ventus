@@ -3,6 +3,7 @@ import React from "react";
 import { HeroTitle } from "../../components/UI/HeroTitle";
 import { CtaBanner } from "../../components/Shared/CtaBanner";
 import { ContactInfo } from "../../components/ContactPage/ContactInfo";
+import { ContactForm } from "../../components/Shared/ContactForm";
 
 const ContactPage = () => {
   return (
@@ -19,6 +20,7 @@ const ContactPage = () => {
       <main>
         <HeroTitle title="Kontakt" />
         <ContactInfo />
+        <ContactForm />
       </main>
     </>
   );

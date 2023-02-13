@@ -1,0 +1,73 @@
+@import "./../../styles/variables";
+.signup-anchor {
+  position: absolute;
+  top: -5rem;
+}
+.lesson-signup {
+  margin: 6rem 0;
+}
+.header {
+  text-align: center;
+  h1 {
+    @include h1Font;
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+  p {
+    color: $color-primary-300;
+    @include bodyFontRegular;
+  }
+  margin-bottom: 6rem;
+}
+.form {
+  max-width: 40rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.form-input {
+  border: none;
+  border-bottom: 0.1rem solid $color-gray-500;
+  outline: none;
+  padding: 0.5rem;
+  @include bodyFontRegular;
+  &:focus {
+    border-color: $color-primary-300;
+  }
+}
+.form-option {
+  display: flex;
+  gap: 3rem;
+  padding-left: 0.5rem;
+  @include bodyFontRegular;
+
+  select {
+    outline: none;
+    border: none;
+    border-bottom: 0.1rem solid $color-gray-500;
+  }
+}
+.form-textarea {
+  @include bodyFontRegular;
+  min-height: 20rem;
+  padding: 0.5rem;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .header {
+    h1 {
+      @include h3FontRegular;
+      margin-bottom: 1rem;
+    }
+  }
+  .form-option {
+    gap: 1.5rem;
+    flex-direction: column;
+  }
+}
