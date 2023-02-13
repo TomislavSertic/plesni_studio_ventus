@@ -4,6 +4,7 @@ import { OurTeachers } from "../../components/AboutPage/OurTeachers";
 import { HeroTitle } from "../../components/HomePage/HeroTitle";
 import { HeroSection } from "../../components/Layout/HeroSection/HeroSection";
 import { CtaBanner } from "../../components/Shared/CtaBanner";
+import { FreeLessonSignup } from "../../components/Shared/FreeLessonSignup";
 import { OurClasses } from "../../components/Shared/OurClasses/OurClasses";
 import { Schedule } from "../../components/Shared/Schedule";
 
@@ -23,7 +24,7 @@ const SchedulePage = () => {
         <HeroSection bgUrl="/images/classes-bg.webp">
           <HeroTitle mainTitle="Raspored" subTitle="" />
           <CtaBanner
-            buttonPath="/register"
+            buttonPath="#free-lesson"
             buttonText="Prijavi se"
             subtitle="Prijavite se i 45-minuta lekcija upoznavanja - potpuno besplatno!!"
             title="Odaberi savršeno vrijeme za sat plesa"
@@ -31,6 +32,7 @@ const SchedulePage = () => {
         </HeroSection>
         <Schedule />
         <OurTeachers />
+        <FreeLessonSignup />
       </main>
     </>
   );

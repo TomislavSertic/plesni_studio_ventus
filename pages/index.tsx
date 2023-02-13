@@ -32,7 +32,7 @@ const HomePage: React.FC<{
         <HeroSection bgUrl="/images/hero-image.webp">
           <HeroTitle subTitle="kod nas naučite" mainTitle="PLESATI" />
           <CtaBanner
-            buttonPath="/register"
+            buttonPath="/schedule#free-lesson"
             buttonText="Prijavi se"
             subtitle="Prijavite se i 45-minuta lekcija upoznavanja - potpuno besplatno!!"
             title="Dobro Došli Novi Studenti"

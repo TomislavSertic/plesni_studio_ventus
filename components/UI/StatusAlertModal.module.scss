@@ -1,0 +1,26 @@
+@import "./../../styles/variables";
+
+.status-modal {
+  z-index: 50;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .message-container {
+    color: $color-light;
+    @include bodyFontMedium;
+  }
+  &.error {
+    background-color: $color-state-warning;
+  }
+  &.alert {
+    background-color: $color-state-caution;
+  }
+  &.success {
+    background-color: $color-state-success;
+  }
+}

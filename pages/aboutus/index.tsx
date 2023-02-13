@@ -25,7 +25,7 @@ const ClassesPage = () => {
         <HeroSection bgUrl="/images/aboutus-bg.webp">
           <HeroTitle mainTitle="O Nama" subTitle="" />
           <CtaBanner
-            buttonPath="/register"
+            buttonPath="/classes#our-classes"
             buttonText="Pogledaj ponudu"
             subtitle="Od južne amerike do istočno europskih plesova"
             title="Bogati izbor ponude plesova"

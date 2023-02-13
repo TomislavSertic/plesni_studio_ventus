@@ -5,6 +5,7 @@ export const Welcome = () => {
   return (
     <Wrapper>
       <div className={styles.welcome}>
+        <div className={styles["our-story-anchor"]} id="our-story"></div>
         <div className={styles["header"]}>
           <h1>Dobro Došli u Ventus Plesni Studio</h1>
           <h4>Plesanje je naš način života</h4>

@@ -25,7 +25,7 @@ export const FooterNav = () => {
             <Link href="/events">Eventi</Link>
           </li>
           <li>
-            <Link href="/events">Vijesti</Link>
+            <Link href="/news">Vijesti</Link>
           </li>
         </ul>
       </div>
@@ -33,10 +33,10 @@ export const FooterNav = () => {
         <h2>O Nama</h2>
         <ul className={styles["footer-group__list"]}>
           <li>
-            <Link href="/aboutus">Naša Priča</Link>
+            <Link href="/aboutus#our-story">Naša Priča</Link>
           </li>
           <li>
-            <Link href="/classes">Tečajevi Plesanja</Link>
+            <Link href="/classes#our-classes">Tečajevi Plesanja</Link>
           </li>
           <li>
             <Link href="/aboutus#student-testimonials">
