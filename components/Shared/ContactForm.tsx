@@ -81,6 +81,7 @@ export const ContactForm = () => {
           setContactEmail(true);
         } else {
           setFormStep(2);
+          setContactEmail(true);
         }
       });
   };
@@ -144,9 +145,9 @@ export const ContactForm = () => {
             onClickF={() => {
               setFormStep(0);
             }}
-            status="Uspješna Prijava"
-            message="Hvala na zainteresiranosti i instruktor ce vas kontaktirati prvom prilikom"
-            buttonText="Pošaljite novu prijavu"
+            status="Uspješno Poslana Poruka"
+            message="Hvala na poruci.Odgovorimo vam prvom prilikom."
+            buttonText="Pošaljite novu poruku"
             success={true}
           />
         )}
@@ -157,7 +158,7 @@ export const ContactForm = () => {
             }}
             status="Nešto je pošlo po krivome."
             message="Probajte ponovo poslati poruku.U slučaju da ne prolazi poašljite direktno mail ili nazovite."
-            buttonText="Pošaljite novu prijavu"
+            buttonText="Pošaljite novu poruku"
             success={false}
           />
         )}
