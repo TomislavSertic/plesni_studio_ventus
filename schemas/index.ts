@@ -4,6 +4,8 @@ import post from "./post";
 import author from "./author";
 import event from "./event";
 import youtube from "./youtube";
+import contactMessage from "./contactMessage";
+import registrationMessage from "./registrationMessage";
 
 export const schemaTypes = [
   post,
@@ -12,4 +14,6 @@ export const schemaTypes = [
   category,
   blockContent,
   youtube,
+  contactMessage,
+  registrationMessage,
 ];

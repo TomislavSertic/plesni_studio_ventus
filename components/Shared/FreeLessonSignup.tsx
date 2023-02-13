@@ -2,9 +2,9 @@ import React, { useRef, useState } from "react";
 import styles from "./FreeLessonSignup.module.scss";
 import { Wrapper } from "../Layout/Wrapper/Wrapper";
 import { FormStatus } from "../UI/FormStatus";
-import { Button } from "../UI/Button";
 import { FormButton } from "../UI/FormElements/FormButton";
 import { StatusAlertModal } from "../UI/StatusAlertModal";
+import { ValidateEmail } from "../../lib/helper-functions";
 
 export const FreeLessonSignup = () => {
   const [formStep, setFormStep] = useState(0);
@@ -15,29 +15,29 @@ export const FreeLessonSignup = () => {
   const emailRef = useRef<HTMLInputElement>(null);
   const phoneRef = useRef<HTMLInputElement>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
+  const wantedResponseRef = useRef<HTMLSelectElement>(null);
   const selectHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    if (e.target.value === "phoneNumber") {
-      setContactEmail(false);
-    }
     if (e.target.value === "emailAddress") {
       setContactEmail(true);
+    } else {
+      setContactEmail(false);
     }
   };
-  const formSubmitHandler = (e: React.FormEvent) => {
+  const formSubmitHandler = async (e: React.FormEvent) => {
     e.preventDefault();
     let errorMsg = "";
     if (nameRef.current?.value === "") {
       errorMsg += "Ime polje je prazno,molimo unesite Vaše ime. ";
-
-      setFormStep(0);
     }
-    if (
-      (contactEmail && emailRef.current?.value === "") ||
-      (!contactEmail && phoneRef.current?.value === "")
-    ) {
-      setFormStep(0);
+    if (contactEmail || (!contactEmail && phoneRef.current?.value === "")) {
       if (contactEmail) {
-        errorMsg += "Unesite Email adresu. ";
+        if (!emailRef.current) {
+          errorMsg += "Unesite Valjanu Email adresu. ";
+          return;
+        }
+        if (!ValidateEmail(emailRef.current.value)) {
+          errorMsg += "Unesite Valjanu Email adresu. ";
+        }
       } else {
         errorMsg += "Unesite Broj Telefona. ";
       }
@@ -54,8 +54,32 @@ export const FreeLessonSignup = () => {
       }, 8000);
       return;
     }
-    console.log("Form Submited");
-    setFormStep(1);
+    const contactSignup = {
+      name: nameRef.current?.value,
+      email:
+        emailRef.current?.value === undefined ? "" : emailRef.current?.value,
+      phoneNumber:
+        phoneRef.current?.value === undefined ? "" : phoneRef.current?.value,
+      wantedResponse: wantedResponseRef.current?.value,
+      message: messageRef.current?.value,
+    };
+    setContactEmail(true);
+    await fetch("/api/registration", {
+      method: "POST",
+      body: JSON.stringify(contactSignup),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          setFormStep(1);
+          setContactEmail(true);
+        } else {
+          setFormStep(2);
+        }
+      });
   };
   return (
     <Wrapper>
@@ -75,10 +99,10 @@ export const FreeLessonSignup = () => {
             />
             <div className={styles["form-option"]}>
               <label>Kontaktirajte me putem</label>
-              <select onChange={selectHandler}>
+              <select onChange={selectHandler} ref={wantedResponseRef}>
                 <option value="emailAddress">Email Poruke</option>
                 <option value="phoneNumber">Telefonskog Poziva</option>
-                <option value="phoneNumber">Whatsup Poruke</option>
+                <option value="whatsupMessage">Whatsup Poruke</option>
               </select>
             </div>
             {contactEmail ? (
