@@ -1,5 +1,7 @@
 @import "./../../styles/variables";
-
+.color-primary {
+  color: $color-primary-300;
+}
 .event-details {
   padding: 2rem;
   border-top: 0.1rem solid rgba($color-gray-100, 0.4);
@@ -11,6 +13,7 @@
     @include h3FontMedium;
     font-weight: 400;
     margin-bottom: 1.5rem;
+    text-transform: uppercase;
   }
 }
 .item {
@@ -20,9 +23,17 @@
     font-weight: 700;
     margin-bottom: 0.4rem;
   }
+  &__tags {
+    .tag {
+      margin-right: 0.5rem;
+    }
+  }
 }
 @media (max-width: $breakpoint-mobile) {
   .event-details {
     flex-direction: column;
+  }
+  .details-box {
+    margin-bottom: 3rem;
   }
 }

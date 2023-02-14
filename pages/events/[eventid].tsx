@@ -62,7 +62,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         \*[_type=="event"]{
             ...,
             categories[]->,
-            instructors->
+            organizator->
         }
         `
   );
@@ -79,12 +79,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 export const getStaticPaths = async () => {
   const eventsListData = await client.fetch(`
-  \*[_type=='event']{
-    ...,
-    categories[]->,
-    author->
-  }
-  `);
+  \*[_type=='event']`);
   const pathsList = eventsListData.map((event: IEvent) => {
     return { params: { eventid: event.slug.current } };
   });

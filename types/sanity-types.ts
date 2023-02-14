@@ -9,9 +9,36 @@ export interface IEvent {
   body: any;
   eventPrice: number;
   eventVenue: string;
-  eventVenueAdress: string;
+  eventVenueAddress: string;
   categories: ICategory[];
   slug: ISlug;
+  organizator: IInstructors;
+}
+export interface IInstructors {
+  bio: any;
+  email: string;
+  image: string;
+  show: boolean;
+  name: string;
+  phoneNumber: string;
+  surname: string;
+  socials: ISocial[];
+  slug: ISlug;
+  _id: string;
+  description: string;
+  knowledge: IDances[];
+}
+export interface IDances {
+  name: string;
+  image: string;
+  slug: ISlug;
+  body: any;
+  teaching: boolean;
+}
+export interface ISocial {
+  url: string;
+  socialName: "instagram" | "facebook" | "youtube";
+  _key: string;
 }
 export interface ISlug {
   current: string[];
