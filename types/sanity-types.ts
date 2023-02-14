@@ -5,12 +5,56 @@ export interface IEvent {
   title: string;
   mainImage: string;
   description: string;
-
-  slug: {
-    current: string[];
-  };
+  author: string;
+  body: any;
+  eventPrice: number;
+  eventVenue: string;
+  eventVenueAddress: string;
+  categories: ICategory[];
+  slug: ISlug;
+  organizator: IInstructors;
 }
-
+export interface IInstructors {
+  bio: any;
+  email: string;
+  image: string;
+  show: boolean;
+  name: string;
+  phoneNumber: string;
+  surname: string;
+  socials: ISocial[];
+  slug: ISlug;
+  _id: string;
+  description: string;
+  knowledge: IDances[];
+}
+export interface IDances {
+  name: string;
+  image: string;
+  slug: ISlug;
+  body: any;
+  teaching: boolean;
+}
+export interface ISocial {
+  url: string;
+  socialName: "instagram" | "facebook" | "youtube";
+  _key: string;
+}
+export interface ISlug {
+  current: string[];
+}
+export interface ICategory {
+  description: string;
+  _id: string;
+  title: string;
+}
+export interface IAuthor {
+  bio: any;
+  name: string;
+  slug: ISlug;
+  image: string;
+  _id: string;
+}
 export interface INewsCard {
   _id: string;
   postType: string;

@@ -6,6 +6,7 @@ import styles from "./LatestNews.module.scss";
 export const LatestNews: React.FC<{ latestNews: INewsCard[] }> = ({
   latestNews,
 }) => {
+  console.log(latestNews);
   return (
     <Wrapper>
       <div className={styles["latest-news"]}>

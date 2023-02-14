@@ -1,0 +1,49 @@
+@import "./../../styles/variables";
+.primary-color {
+  color: $color-primary-300;
+}
+.event-header {
+  margin-bottom: 4rem;
+}
+.return-link {
+  display: inline-block;
+  margin-bottom: 4rem;
+  @include bodyFontRegular;
+  transition: 0.4s all;
+  &:hover {
+    color: $color-primary-300;
+  }
+}
+.event-date {
+  @include bodyFontRegular;
+  .separator {
+    margin: 0 1rem;
+  }
+  margin-bottom: 1rem;
+}
+.title {
+  @include h1Font;
+  margin-bottom: 2rem;
+}
+.image-container {
+  height: 40rem;
+  img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+@media (max-width: $breakpoint-mobile) {
+  .event-header {
+    margin-bottom: 2rem;
+  }
+  .image-container {
+    height: 30rem;
+    img {
+      width: 100%;
+    }
+  }
+  .event-date {
+    @include bodyFontSmRegular;
+  }
+}

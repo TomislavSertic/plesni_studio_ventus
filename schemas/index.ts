@@ -6,14 +6,18 @@ import event from "./event";
 import youtube from "./youtube";
 import contactMessage from "./contactMessage";
 import registrationMessage from "./registrationMessage";
+import instructors from "./instructors";
+import dances from "./dances";
 
 export const schemaTypes = [
   post,
   event,
   author,
   category,
-  blockContent,
+  instructors,
+  dances,
   youtube,
   contactMessage,
   registrationMessage,
+  blockContent,
 ];

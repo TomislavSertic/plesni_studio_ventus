@@ -27,10 +27,10 @@ export default defineType({
       },
     }),
     defineField({
-      name: "author",
-      title: "Author",
+      name: "organizator",
+      title: "Organizator",
       type: "reference",
-      to: { type: "author" },
+      to: { type: "instructors" },
     }),
     defineField({
       name: "mainImage",
@@ -42,13 +42,13 @@ export default defineType({
     }),
     defineField({
       name: "categories",
-      title: "Categories",
+      title: "Tagovi",
       type: "array",
       of: [{ type: "reference", to: { type: "category" } }],
     }),
     defineField({
       name: "publishedAt",
-      title: "Published at",
+      title: "Objavljeno",
       type: "datetime",
     }),
     defineField({
@@ -88,7 +88,7 @@ export default defineType({
     }),
     defineField({
       name: "body",
-      title: "Body",
+      title: "Tekst Eventa",
       type: "blockContent",
     }),
   ],

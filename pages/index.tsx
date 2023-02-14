@@ -17,6 +17,7 @@ const HomePage: React.FC<{
   upcomingEvents: IEvent[];
   latestNews: INewsCard[];
 }> = ({ upcomingEvents, latestNews }) => {
+  console.log(upcomingEvents);
   return (
     <>
       <Head>
@@ -50,7 +51,7 @@ const HomePage: React.FC<{
 };
 export default HomePage;
 export const getStaticProps: GetStaticProps = async () => {
-  const groqQueryEvents = `\*[_type=='event' && eventStart>="${getTodayDate()}"]`;
+  const groqQueryEvents = `\*[_type=='event' && eventStart>="${getTodayDate()}"] \| order(eventStart asc)`;
   const groqQueryLatestNews = `\*[_type=='post' \|\| _type=='event']{...,
     categories[]->,
     author->} \| order(_createdAt desc)[0..2]`;
