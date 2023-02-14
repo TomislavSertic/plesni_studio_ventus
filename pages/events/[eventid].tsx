@@ -2,6 +2,7 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import React from "react";
 import { EventBody } from "../../components/EventPage/EventBody";
+import { EventDetails } from "../../components/EventPage/EventDetails";
 import { EventHeader } from "../../components/EventPage/EventHeader";
 import { Wrapper } from "../../components/Layout/Wrapper/Wrapper";
 import { client, urlFor } from "../../lib/sanity.client";
@@ -38,7 +39,7 @@ const SingleEventPage: React.FC<{ event: IEvent }> = ({ event }) => {
         <section>
           <EventHeader event={event} />
           <EventBody event={event} />
-          <div className="">Event Details</div>
+          <EventDetails event={event} />
         </section>
       </Wrapper>
     </>
@@ -61,7 +62,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         \*[_type=="event"]{
             ...,
             categories[]->,
-            author->
+            instructors->
         }
         `
   );

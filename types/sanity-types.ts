@@ -7,11 +7,27 @@ export interface IEvent {
   description: string;
   author: string;
   body: any;
-  slug: {
-    current: string[];
-  };
+  eventPrice: number;
+  eventVenue: string;
+  eventVenueAdress: string;
+  categories: ICategory[];
+  slug: ISlug;
 }
-
+export interface ISlug {
+  current: string[];
+}
+export interface ICategory {
+  description: string;
+  _id: string;
+  title: string;
+}
+export interface IAuthor {
+  bio: any;
+  name: string;
+  slug: ISlug;
+  image: string;
+  _id: string;
+}
 export interface INewsCard {
   _id: string;
   postType: string;
