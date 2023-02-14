@@ -1,0 +1,11 @@
+@import "./../../styles/variables";
+
+.event-body {
+  width: 80%;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .event-body {
+    width: 100%;
+  }
+}

@@ -5,7 +5,8 @@ export interface IEvent {
   title: string;
   mainImage: string;
   description: string;
-
+  author: string;
+  body: any;
   slug: {
     current: string[];
   };
