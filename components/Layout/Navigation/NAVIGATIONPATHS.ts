@@ -25,8 +25,13 @@ export const NAVIGATIONPATHS = [
     id: 4,
   },
   {
+    name: "Događanja",
+    path: "/events",
+    id: 5,
+  },
+  {
     name: "Kontakt",
     path: "/contact",
-    id: 5,
+    id: 6,
   },
 ];
