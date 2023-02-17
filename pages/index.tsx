@@ -24,7 +24,7 @@ const HomePage: React.FC<{
         <title>Plesni Studio Ventus</title>
         <meta
           name="description"
-          content="Plesni studio Ventus.Prvi ples lekcije,moderni ples,samba, tango, latino plesovi.Domagoj Sertić i Korina vrhunski nagrađivani instruktori plesa."
+          content="Plesni studio Ventus, Zagreb.Prvi ples lekcije,moderni ples,samba, tango, latino plesovi.Vrhunski instruktori i pristupačne cijene."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

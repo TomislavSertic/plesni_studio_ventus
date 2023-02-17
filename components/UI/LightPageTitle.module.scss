@@ -1,0 +1,14 @@
+@import "./../../styles/variables";
+
+.light-title {
+  text-align: center;
+  padding: 5rem 0;
+  border-bottom: 0.1rem solid rgba($color-gray-100, 0.4);
+  h1 {
+    @include h1Font;
+  }
+  h4 {
+    @include h4Font;
+    color: $color-gray-500;
+  }
+}
