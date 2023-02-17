@@ -4,9 +4,15 @@ import styles from "./InstructorCard.module.scss";
 
 import { IInstructorData } from "../../types/general";
 import { PlusIcon } from "../Icons/PlusIcon";
+import { useRouter } from "next/router";
 export const InstructorCard: React.FC<{ instructorData: IInstructorData }> = ({
   instructorData,
 }) => {
+  const router = useRouter();
+
+  const imageLinkPush = () => {
+    router.push("/instructors/domagoj-sertic");
+  };
   const { image, title, name, description, socials } = instructorData;
   const renderSocialIcons = (social: { name: string; url: string }) => {
     if (social.name.toLowerCase() === "facebook") {
@@ -49,7 +55,7 @@ export const InstructorCard: React.FC<{ instructorData: IInstructorData }> = ({
   };
   return (
     <div className={styles["instructor-card"]}>
-      <div className={styles["image-container"]}>
+      <div className={styles["image-container"]} onClick={imageLinkPush}>
         <span className={styles["plus-icon"]}>
           <PlusIcon width={24} height={24} />
         </span>

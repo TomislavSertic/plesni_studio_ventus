@@ -1,0 +1,9 @@
+@import "./../../styles/variables";
+.upper-section {
+  display: flex;
+}
+.image-container {
+  img {
+    object-fit: contain;
+  }
+}
