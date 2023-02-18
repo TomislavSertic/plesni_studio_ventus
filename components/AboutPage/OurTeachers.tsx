@@ -3,7 +3,10 @@ import { Wrapper } from "../Layout/Wrapper/Wrapper";
 import styles from "./OurTeachers.module.scss";
 import INSTRUCTORS from "./../../StaticData/INSTRUCTORS.json";
 import { InstructorCard } from "../Cards/InstructorCard";
-export const OurTeachers = () => {
+import { IInstructors } from "../../types/sanity-types";
+export const OurTeachers: React.FC<{ instructors: IInstructors[] }> = ({
+  instructors,
+}) => {
   return (
     <div className={styles["our-teachers"]}>
       <Wrapper>
@@ -11,16 +14,15 @@ export const OurTeachers = () => {
           <h1>Instruktori</h1>
           <h4>Iskustvo - Znanje - Strast</h4>
         </div>
-        <div className={styles["cards-list"]}>
-          {INSTRUCTORS.map((instructor) => {
-            return (
-              <InstructorCard
-                key={instructor.name}
-                instructorData={instructor}
-              />
-            );
-          })}
-        </div>
+        {instructors && (
+          <div className={styles["cards-list"]}>
+            {instructors.map((instructor) => {
+              return (
+                <InstructorCard key={instructor.name} instructor={instructor} />
+              );
+            })}
+          </div>
+        )}
       </Wrapper>
     </div>
   );

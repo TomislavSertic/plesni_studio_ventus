@@ -50,14 +50,26 @@ export const FooterNav = () => {
         <h2>Socijalne Mreže</h2>
         <ul className={styles["footer-group__list"]}>
           <li>
-            <a href="https://google.com">Instagram</a>
+            <a
+              href="https://www.instagram.com/plesnistudio_ventus"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Instagram
+            </a>
           </li>
           <li>
-            <a href="https://google.com">Facebook</a>
+            <a
+              href="https://www.facebook.com/profile.php?id=100086596752037"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Facebook
+            </a>
           </li>
-          <li>
+          {/* <li>
             <a href="https://google.com">Youtube</a>
-          </li>
+          </li> */}
         </ul>
       </div>
     </nav>

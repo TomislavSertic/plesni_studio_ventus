@@ -1,9 +1,40 @@
 @import "./../../styles/variables";
+.instructor-content {
+  margin: 4rem 0;
+}
 .upper-section {
   display: flex;
+  margin-bottom: 2rem;
 }
 .image-container {
+  flex: 1;
   img {
+    width: 100%;
     object-fit: contain;
+  }
+}
+.info-container {
+  padding: 0 1rem;
+  width: 30%;
+  @include bodyFontRegular;
+  .dance-class {
+    color: $color-primary-300;
+  }
+}
+.blog {
+  width: 70%;
+}
+@media (max-width: $breakpoint-tablet) {
+  .upper-section {
+    flex-direction: column;
+  }
+  .image-container {
+    margin-bottom: 1rem;
+  }
+  .info-container {
+    width: 100%;
+  }
+  .blog {
+    width: 100%;
   }
 }

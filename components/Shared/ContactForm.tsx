@@ -33,7 +33,6 @@ export const ContactForm = () => {
 
     if (contactEmail || (!contactEmail && phoneRef.current?.value === "")) {
       if (contactEmail) {
-        console.log(" U CONTACT EMAIL SMO");
         if (!emailRef.current) {
           errorMsg += "Unesite Valjanu Email adresu. ";
           return;

@@ -1,0 +1,12 @@
+@import "./../../../styles/variables";
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.1rem solid rgba($color-gray-100, 0.5);
+  .title {
+    font-weight: 700;
+  }
+}
