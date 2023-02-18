@@ -8,8 +8,12 @@ import { OurInstructors } from "../../components/HomePage/OurInstructors";
 import { HeroSection } from "../../components/Layout/HeroSection/HeroSection";
 import { CtaBanner } from "../../components/Shared/CtaBanner";
 import { OurClasses } from "../../components/Shared/OurClasses/OurClasses";
+import { getAllInstructors } from "../../lib/sanityFetch";
+import { IInstructors } from "../../types/sanity-types";
 
-const ClassesPage = () => {
+const ClassesPage: React.FC<{ instructors: IInstructors[] }> = ({
+  instructors,
+}) => {
   return (
     <>
       <Head>
@@ -32,10 +36,18 @@ const ClassesPage = () => {
           />
         </HeroSection>
         <Welcome />
-        <OurTeachers />
+        <OurTeachers instructors={instructors} />
         <StudentTestimonials />
       </main>
     </>
   );
 };
 export default ClassesPage;
+export const getStaticProps = async () => {
+  const instructors = await getAllInstructors();
+  return {
+    props: {
+      instructors: instructors,
+    },
+  };
+};

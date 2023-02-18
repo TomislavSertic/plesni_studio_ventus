@@ -34,6 +34,7 @@ export interface IDances {
   slug: ISlug;
   body: any;
   teaching: boolean;
+  _id: string;
 }
 export interface ISocial {
   url: string;

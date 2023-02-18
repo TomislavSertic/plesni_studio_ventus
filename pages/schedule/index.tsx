@@ -7,8 +7,12 @@ import { CtaBanner } from "../../components/Shared/CtaBanner";
 import { FreeLessonSignup } from "../../components/Shared/FreeLessonSignup";
 import { OurClasses } from "../../components/Shared/OurClasses/OurClasses";
 import { Schedule } from "../../components/Shared/Schedule";
+import { getAllInstructors } from "../../lib/sanityFetch";
+import { IInstructors } from "../../types/sanity-types";
 
-const SchedulePage = () => {
+const SchedulePage: React.FC<{ instructors: IInstructors[] }> = ({
+  instructors,
+}) => {
   return (
     <>
       <Head>
@@ -31,10 +35,19 @@ const SchedulePage = () => {
           />
         </HeroSection>
         <Schedule />
-        <OurTeachers />
+        <OurTeachers instructors={instructors} />
         <FreeLessonSignup />
       </main>
     </>
   );
 };
 export default SchedulePage;
+
+export const getStaticProps = async () => {
+  const instructors = await getAllInstructors();
+  return {
+    props: {
+      instructors: instructors,
+    },
+  };
+};

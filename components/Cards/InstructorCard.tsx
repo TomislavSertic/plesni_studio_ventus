@@ -5,17 +5,18 @@ import styles from "./InstructorCard.module.scss";
 import { IInstructorData } from "../../types/general";
 import { PlusIcon } from "../Icons/PlusIcon";
 import { useRouter } from "next/router";
-export const InstructorCard: React.FC<{ instructorData: IInstructorData }> = ({
-  instructorData,
-}) => {
+import { IInstructors } from "../../types/sanity-types";
+import { urlFor } from "../../lib/sanity.client";
+export const InstructorCard: React.FC<{
+  instructor: IInstructors;
+}> = ({ instructor }) => {
   const router = useRouter();
-
+  const { image, name, description, socials, slug } = instructor;
   const imageLinkPush = () => {
-    router.push("/instructors/domagoj-sertic");
+    router.push(`/instructors/${slug.current}`);
   };
-  const { image, title, name, description, socials } = instructorData;
-  const renderSocialIcons = (social: { name: string; url: string }) => {
-    if (social.name.toLowerCase() === "facebook") {
+  const renderSocialIcons = (social: { socialName: string; url: string }) => {
+    if (social.socialName.toLowerCase() === "facebook") {
       return (
         <a href={social.url} target="_blank" rel="noreferrer">
           <Image
@@ -27,7 +28,7 @@ export const InstructorCard: React.FC<{ instructorData: IInstructorData }> = ({
         </a>
       );
     }
-    if (social.name.toLowerCase() === "instagram") {
+    if (social.socialName.toLowerCase() === "instagram") {
       return (
         <a href={social.url} target="_blank" rel="noreferrer">
           <Image
@@ -39,7 +40,7 @@ export const InstructorCard: React.FC<{ instructorData: IInstructorData }> = ({
         </a>
       );
     }
-    if (social.name.toLowerCase() === "youtube") {
+    if (social.socialName.toLowerCase() === "youtube") {
       return (
         <a href={social.url} target="_blank" rel="noreferrer">
           <Image
@@ -59,17 +60,13 @@ export const InstructorCard: React.FC<{ instructorData: IInstructorData }> = ({
         <span className={styles["plus-icon"]}>
           <PlusIcon width={24} height={24} />
         </span>
-        <Image src={image} alt={name} width={200} height={200} />
+        <Image src={urlFor(image).url()} alt={name} width={200} height={200} />
       </div>
       <p className={styles["name"]}>{name}</p>
-      <p className={styles["title"]}>{title}</p>
+      <p className={styles["title"]}>Dance Instructor</p>
       <div className={styles["socials"]}>
         {socials.map((social) => {
-          return (
-            <span key={social.name + Math.random()}>
-              {renderSocialIcons(social)}
-            </span>
-          );
+          return <span key={social._key}>{renderSocialIcons(social)}</span>;
         })}
       </div>
       <div className={styles["description"]}>

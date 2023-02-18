@@ -16,7 +16,6 @@ const SingleEventPage: React.FC<{ event: IEvent }> = ({ event }) => {
       </Wrapper>
     );
   }
-  console.log(event);
   const { title, mainImage, description, author } = event;
   const imageUrl = mainImage ? urlFor(mainImage).url() : "";
   const headTitle = `PS Ventus - ${title.substring(0, 10)}...`;

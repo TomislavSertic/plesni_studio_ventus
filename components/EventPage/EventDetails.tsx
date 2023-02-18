@@ -13,7 +13,6 @@ export const EventDetails: React.FC<{ event: IEvent }> = ({ event }) => {
     categories,
     organizator,
   } = event;
-  console.log(event);
   const startDate = readableDate(eventStart);
   const endDate = readableDate(eventEnd);
   const eventStartTime = new Date(eventStart).toLocaleTimeString("en-GB");

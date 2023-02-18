@@ -9,7 +9,6 @@ import { readableDate } from "../../lib/helper-functions";
 
 export const EventHeader: React.FC<{ event: IEvent }> = ({ event }) => {
   const { title, mainImage, eventStart, eventEnd } = event;
-  console.log(event);
   const startDate = readableDate(eventStart);
   const endDate = readableDate(eventEnd);
   const eventStartTime = new Date(eventStart).toLocaleTimeString("en-GB");

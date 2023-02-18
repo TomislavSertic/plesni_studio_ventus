@@ -11,9 +11,12 @@ export const InstructorPage: React.FC<{ instructor: IInstructors }> = ({
 }) => {
   return (
     <Wrapper>
-      <LightPageTitle title="Domagoj Sertic" />
       {instructor ? (
-        <InstructorPageContent instructor={instructor} />
+        <>
+          <LightPageTitle title={instructor.name + " " + instructor.surname} />
+
+          <InstructorPageContent instructor={instructor} />
+        </>
       ) : (
         <h1>Loading...</h1>
       )}
@@ -55,7 +58,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const pathsList = instructorsListData.map((event: IInstructors) => {
     return { params: { instructorid: event.slug.current } };
   });
-  console.log(pathsList);
   return {
     paths: pathsList,
     fallback: false,
