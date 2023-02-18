@@ -12,17 +12,22 @@ export const LatestNews: React.FC<{ latestNews: INewsCard[] }> = ({
         <div className={styles["header"]}>
           <h1>Najnovije Vijesti</h1>
         </div>
-        <div className={styles["news-list"]}>
+        {latestNews ? (
+          <div className={styles["news-list"]}>
+            <h2 style={{ textAlign: "center" }}>Žao nam je, nema vijesti</h2>
+            {/*     <div className={styles["news-container"]}>
+            <NewsCard />
+            </div>
           <div className={styles["news-container"]}>
             <NewsCard />
-          </div>
-          <div className={styles["news-container"]}>
+            </div>
+            <div className={styles["news-container"]}>
             <NewsCard />
+          </div>*/}
           </div>
-          <div className={styles["news-container"]}>
-            <NewsCard />
-          </div>
-        </div>
+        ) : (
+          <h2 style={{ textAlign: "center" }}>Žao nam je, nema vijesti</h2>
+        )}
       </div>
       ;
     </Wrapper>
