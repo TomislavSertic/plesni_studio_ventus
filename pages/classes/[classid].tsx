@@ -1,68 +1,68 @@
 import Head from "next/head";
 import { GetStaticProps } from "next/types";
 import React from "react";
+import { SingleClassContent } from "../../components/ClassesPage/SingleClassContent";
+import { Wrapper } from "../../components/Layout/Wrapper/Wrapper";
 import { HeroTitle } from "../../components/UI/HeroTitle";
+import { LightPageTitle } from "../../components/UI/LightPageTitle";
 import { UnderConstruction } from "../../components/UI/UnderConstruction";
 import { client } from "../../lib/sanity.client";
-import { IEvent } from "../../types/sanity-types";
+import { getAllDancesPaths, getDance } from "../../lib/sanityFetch";
+import { IDances, IEvent } from "../../types/sanity-types";
 
-const ClassPage = () => {
+const ClassPage: React.FC<{ dance: IDances }> = ({ dance }) => {
+  console.log(dance);
+  if (!dance) {
+    return (
+      <main>
+        <h1>Loading...</h1>
+      </main>
+    );
+  }
+
   return (
     <>
       <Head>
-        <title>Ventus - Samba</title>
+        <title>Ventus - {dance.name}</title>
         <meta
           name="description"
-          content="Plesni studio Ventus.Prvi ples lekcije,moderni ples,samba, tango, latino plesovi.Domagoj Sertić i Korina vrhunski nagrađivani instruktori plesa."
+          content="Plesni studio Ventus, Zagreb.Prvi ples lekcije,moderni ples,samba, tango, latino plesovi.Domagoj Sertić i Korina vrhunski nagrađivani instruktori plesa."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <HeroTitle title="Under Construction" />
-        <UnderConstruction />
-      </main>
+      <Wrapper>
+        <main>
+          <LightPageTitle title={dance.name} />
+          <SingleClassContent dance={dance} />
+        </main>
+      </Wrapper>
     </>
   );
 };
 export default ClassPage;
 export const getStaticProps: GetStaticProps = async (context) => {
-  /*  if (!context.params) {
+  if (!context.params || !context.params.classid) {
     return {
       props: {
         event: null,
       },
     };
   }
-  const slug = context.params.eventid;
-  const eventsListData = await client.fetch(
-    `
-          \*[_type=="event"]{
-              ...,
-              categories[]->,
-              organizator->
-          }
-          `
-  );
-  const event = eventsListData.find(
-    (event: IEvent) => event.slug.current === slug
-  );
-     */
+  const slug = context.params.classid;
+  const dance = await getDance(slug);
   return {
     props: {
-      class: {},
+      dance,
     },
   };
 };
 
 export const getStaticPaths = async () => {
-  const eventsListData = await client.fetch(`
-    \*[_type=='event']`);
-  const pathsList = eventsListData.map((event: IEvent) => {
-    return { params: { classid: event.slug.current } };
-  });
+  const pathsList = await getAllDancesPaths();
+  console.log(pathsList);
   return {
     paths: pathsList,
-    fallback: true,
+    fallback: false,
   };
 };

@@ -34,6 +34,20 @@ export const getAllInstructorsPaths = async () => {
   return pathsList;
 };
 
+export const getDance = async (slug: string | string[]) => {
+  const allDanceData = await client.fetch(`
+    \*[_type=='dances' && (
+        !(_id in path("drafts.**")))]{
+            ...,
+            categories[]->
+        }`);
+  const dance = allDanceData.find(
+    (dance: IDances) => dance.slug.current === slug
+  );
+
+  return dance;
+};
+
 export const getAllDancesPaths = async () => {
   const eventsListData = await client.fetch(`
     \*[_type=='dances' && (
