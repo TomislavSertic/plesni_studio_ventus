@@ -26,12 +26,38 @@ export default defineType({
       initialValue: false,
     }),
     defineField({
+      name: "teachingOptions",
+      title: "Način Predavanja",
+      type: "array",
+      of: [
+        {
+          name: "teachingOption",
+          title: "Opcija",
+          type: "string",
+          options: {
+            list: [
+              { title: "Grupe", value: "groups" },
+              { title: "Privatne Lekcije", value: "privateLessons" },
+              { title: "Video Lekcije", value: "videoLessons" },
+            ],
+            layout: "dropdown",
+          },
+        },
+      ],
+    }),
+    defineField({
       name: "image",
       title: "Slika",
       type: "image",
       options: {
         hotspot: true,
       },
+    }),
+    defineField({
+      name: "categories",
+      title: "Kategorije",
+      type: "array",
+      of: [{ type: "reference", to: { type: "category" } }],
     }),
     defineField({
       name: "body",
