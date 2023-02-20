@@ -4,6 +4,7 @@ import { InstructorPageContent } from "../../components/InstructorsPage/Instruct
 import { Wrapper } from "../../components/Layout/Wrapper/Wrapper";
 import { LightPageTitle } from "../../components/UI/LightPageTitle";
 import { client } from "../../lib/sanity.client";
+import { getAllInstructorsPaths, getInstructor } from "../../lib/sanityFetch";
 import { IInstructors } from "../../types/sanity-types";
 
 export const InstructorPage: React.FC<{ instructor: IInstructors }> = ({
@@ -26,7 +27,7 @@ export const InstructorPage: React.FC<{ instructor: IInstructors }> = ({
 export default InstructorPage;
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  if (!context.params) {
+  if (!context.params || !context.params.instructorid) {
     return {
       props: {
         event: null,
@@ -34,15 +35,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     };
   }
   const slug = context.params.instructorid;
-  const instructorsListData = await client.fetch(`
-  \*[_type=='instructors' && (
-    !(_id in path("drafts.**")))]{
-      ...,
-      knowledge[]->
-    }`);
-  const instructor = instructorsListData.find(
-    (instructor: IInstructors) => instructor.slug.current === slug
-  );
+  const instructor = await getInstructor(slug);
   return {
     props: {
       instructor: instructor,
@@ -52,12 +45,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const instructorsListData = await client.fetch(`
-  \*[_type=='instructors' && (
-    !(_id in path("drafts.**")))]`);
-  const pathsList = instructorsListData.map((event: IInstructors) => {
-    return { params: { instructorid: event.slug.current } };
-  });
+  const pathsList = await getAllInstructorsPaths();
   return {
     paths: pathsList,
     fallback: false,

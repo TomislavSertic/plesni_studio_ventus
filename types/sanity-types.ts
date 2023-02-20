@@ -34,6 +34,8 @@ export interface IDances {
   slug: ISlug;
   body: any;
   teaching: boolean;
+  teachingOptions: string[];
+  categories: ICategory[];
   _id: string;
 }
 export interface ISocial {
