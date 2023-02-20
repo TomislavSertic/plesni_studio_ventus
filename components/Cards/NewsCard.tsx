@@ -16,7 +16,6 @@ export const NewsCard: React.FC<{ newsPreview: IPost }> = ({ newsPreview }) => {
     description,
     publishedAt,
   } = newsPreview;
-  console.log(newsPreview);
   return (
     <div className={styles["news-card"]}>
       <Link href={`/news/${slug.current}`}>

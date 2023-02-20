@@ -26,6 +26,12 @@ export default defineType({
       initialValue: false,
     }),
     defineField({
+      name: "highlighted",
+      title: "Istaknuto",
+      type: "boolean",
+      initialValue: false,
+    }),
+    defineField({
       name: "teachingOptions",
       title: "Način Predavanja",
       type: "array",
@@ -36,9 +42,9 @@ export default defineType({
           type: "string",
           options: {
             list: [
-              { title: "Grupe", value: "groups" },
-              { title: "Privatne Lekcije", value: "privateLessons" },
-              { title: "Video Lekcije", value: "videoLessons" },
+              { title: "Grupe", value: "Grupe" },
+              { title: "Privatne Lekcije", value: "Privatne Lekcije" },
+              { title: "Video Lekcije", value: "Video Lekcije" },
             ],
             layout: "dropdown",
           },

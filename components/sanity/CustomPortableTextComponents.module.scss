@@ -4,7 +4,7 @@
 .h3,
 .h4,
 .secondary-color {
-  color: $color-secondary-300;
+  color: $color-primary-300;
 }
 .h1 {
   @include h1Font;
@@ -36,17 +36,17 @@
   p {
     margin: 0.5rem 0;
     @include bodyFontSmRegular;
-    color: $color-secondary-300;
+    color: $color-primary-300;
   }
 }
 .title {
-  color: $color-secondary-500;
+  color: $color-primary-500;
 }
 .link {
-  color: $color-secondary-300;
+  color: $color-primary-300;
   transition: 0.2s all;
   &:hover {
-    color: darken($color-secondary-300, $amount: 20);
+    color: darken($color-primary-300, $amount: 20);
   }
 }
 .quote {
@@ -54,7 +54,7 @@
   margin-top: 4rem;
   @include h3FontRegular;
   padding-left: 3rem;
-  border-left: 2px solid $color-secondary-300;
+  border-left: 2px solid $color-primary-300;
 }
 .cite {
   display: inline-block;
@@ -62,7 +62,7 @@
   text-align: right;
   padding-right: 3rem;
   @include bodyFontRegular;
-  color: $color-secondary-300;
+  color: $color-primary-300;
 }
 .listBullet {
   list-style: disc;
@@ -82,7 +82,7 @@
   p {
     margin: 0.5rem 0;
     @include bodyFontSmRegular;
-    color: $color-secondary-300;
+    color: $color-primary-300;
     text-align: center;
   }
 }

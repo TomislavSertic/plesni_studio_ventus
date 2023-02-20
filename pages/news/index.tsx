@@ -7,7 +7,6 @@ import { getAllPosts } from "../../lib/sanityFetch";
 import { IPost } from "../../types/sanity-types";
 
 export const NewsPage: React.FC<{ news: IPost[] }> = ({ news }) => {
-  console.log(news);
   return (
     <>
       <Head>

@@ -35,7 +35,8 @@ export const EventsPage: React.FC<{ events: IEvent[] }> = ({ events }) => {
 
 export default EventsPage;
 export const getStaticProps: GetStaticProps = async () => {
-  const groqQueryEvents = `\*[_type=='event' && eventStart>="${getTodayDate()}"] \| order(eventStart asc)`;
+  const groqQueryEvents = `\*[_type=='event' && (
+    !(_id in path("drafts.**"))) && eventStart>="${getTodayDate()}"] \| order(eventStart asc)`;
 
   const eventData = await client.fetch(groqQueryEvents);
 

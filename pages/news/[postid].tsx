@@ -35,7 +35,7 @@ const NewsPostPage: React.FC<{ news: IPost }> = ({ news }) => {
         <meta property="twitter:image" content={imageUrl} />
         <meta property="twitter:title " content={title} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="https://esportinicijativa.hr" />
+        <meta name="twitter:site" content="https://plesni-studio-ventus.hr" />
         <meta name="twitter:creator" content={author.name} />
       </Head>
       <Wrapper>

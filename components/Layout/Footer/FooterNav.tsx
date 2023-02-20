@@ -14,7 +14,7 @@ export const FooterNav = () => {
             </a>
           </li>
           <li>
-            <a href="tel:+385914455915">+385914455915</a>
+            <a href="tel:+385914455914">+385914455914</a>
           </li>
         </ul>
       </div>

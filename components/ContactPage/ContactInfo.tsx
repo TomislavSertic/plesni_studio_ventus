@@ -23,36 +23,64 @@ export const ContactInfo = () => {
             Radujemo se vašem pozivu ili poruci i stojimo vam na raspolaganju da
             odgovorimo na sva vaša pitanja.
           </p>
-        </div>
-        <div className={styles["information-container"]}>
-          <h2>Plesni Studio Ventus j.d.o.o.</h2>
-          <ul className={styles["information-list"]}>
-            <li className={styles["contact-item"]}>
-              <span className={styles.icon}>
-                <Image
-                  alt="email icon"
-                  src="/icons/mail-dark.png"
-                  width={18}
-                  height={18}
-                />
-              </span>
-              <a href="mailto:plesni.studio.ventus@gmail.com">
-                plesni.studio.ventus@gmail.com
-              </a>
-            </li>
-            <li>
-              <p className={styles["contact-item"]}>
-                {" "}
+          <div className={styles["information-container"]}>
+            <h2>Plesni Studio Ventus j.d.o.o.</h2>
+            <ul className={styles["information-list"]}>
+              <li className={styles["contact-item"]}>
                 <span className={styles.icon}>
                   <Image
                     alt="email icon"
-                    src="/icons/phone-dark.png"
+                    src="/icons/mail-dark.png"
                     width={18}
                     height={18}
                   />
-                </span>{" "}
-                <a href="tel:+385914455915">+385914455915</a>
-              </p>
+                </span>
+                <a href="mailto:plesni.studio.ventus@gmail.com">
+                  plesni.studio.ventus@gmail.com
+                </a>
+              </li>
+              <li>
+                <p className={styles["contact-item"]}>
+                  {" "}
+                  <span className={styles.icon}>
+                    <Image
+                      alt="email icon"
+                      src="/icons/phone-dark.png"
+                      width={18}
+                      height={18}
+                    />
+                  </span>{" "}
+                  <a href="tel:+385914455914">+385914455914</a>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className={styles["location"]}>
+          <h2>Lokacija</h2>
+          <p>
+            Plesni studio Ventus trenutno nema stalnu lokaciju, ali održavamo
+            grupe na više lokacija u gradu. Budući da smo tek otvorili, tražimo
+            savršeno mjesto za naš stalni dom, gdje ćemo moći pružiti najbolje
+            uvjete za naše polaznike.
+          </p>
+          <p>
+            Unatoč tome, naše grupe su vrlo aktivne i uvijek se trudimo pronaći
+            kvalitetne i prikladne lokacije za naše satove plesa.Odmah ispod
+            možete vidjeti popis grupa i njihovih lokacija te u koje vrijeme nas
+            tamo možete posjetit
+          </p>
+          <ul>
+            <li>
+              - Utorak 19:00 - 20:30{" "}
+              <span className={styles["primary-color"]}>@</span> Magazinska 9a -
+              Društveni Plesovi
+            </li>
+            <li>
+              - Četvrtak 19:00 - 20:30{" "}
+              <span className={styles["primary-color"]}>@</span> Magazinska 9a -
+              Društveni Plesovi
             </li>
           </ul>
         </div>

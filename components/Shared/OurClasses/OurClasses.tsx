@@ -17,8 +17,8 @@ export const OurClasses: React.FC<{ dances: IDances[] }> = ({ dances }) => {
       <Wrapper>
         <div className={styles["content"]}>
           <header className={styles["header"]}>
-            <h1>Naši Stilovi Plesa</h1>
-            <p>Odeberi svoj stil</p>
+            <h1>Istaknute Grupe i Plesovi</h1>
+            <p>Za svakog ponešto</p>
           </header>
         </div>
         <div className={styles["cards-container"]}>
