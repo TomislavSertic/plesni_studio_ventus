@@ -6,13 +6,6 @@ export default defineType({
   type: "document",
   fields: [
     defineField({
-      name: "postType",
-      title: "Post Type",
-      type: "string",
-      readOnly: true,
-      initialValue: "post",
-    }),
-    defineField({
       name: "title",
       title: "Title",
       type: "string",
