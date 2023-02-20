@@ -57,3 +57,10 @@ export const getAllDancesPaths = async () => {
   });
   return pathsList;
 };
+
+export const getAllDancesTeached = async () => {
+  const dancesListData = await client.fetch(`
+    \*[_type=='dances' && teaching==true && (
+        !(_id in path("drafts.**")))]`);
+  return dancesListData;
+};

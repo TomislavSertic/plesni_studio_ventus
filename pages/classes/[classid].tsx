@@ -11,7 +11,6 @@ import { getAllDancesPaths, getDance } from "../../lib/sanityFetch";
 import { IDances, IEvent } from "../../types/sanity-types";
 
 const ClassPage: React.FC<{ dance: IDances }> = ({ dance }) => {
-  console.log(dance);
   if (!dance) {
     return (
       <main>
@@ -60,7 +59,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 export const getStaticPaths = async () => {
   const pathsList = await getAllDancesPaths();
-  console.log(pathsList);
   return {
     paths: pathsList,
     fallback: false,

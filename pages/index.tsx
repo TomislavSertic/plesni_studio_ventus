@@ -11,13 +11,20 @@ import { CtaBanner } from "../components/Shared/CtaBanner";
 import { OurClasses } from "../components/Shared/OurClasses/OurClasses";
 import { getTodayDate } from "../lib/helper-functions";
 import { client } from "../lib/sanity.client";
-import { IEvent, IInstructors, INewsCard } from "../types/sanity-types";
+import { getAllDancesTeached } from "../lib/sanityFetch";
+import {
+  IDances,
+  IEvent,
+  IInstructors,
+  INewsCard,
+} from "../types/sanity-types";
 
 const HomePage: React.FC<{
   upcomingEvents: IEvent[];
   latestNews: INewsCard[];
   instructors: IInstructors[];
-}> = ({ upcomingEvents, latestNews, instructors }) => {
+  dances: IDances[];
+}> = ({ upcomingEvents, latestNews, instructors, dances }) => {
   return (
     <>
       <Head>
@@ -40,7 +47,7 @@ const HomePage: React.FC<{
           />
         </HeroSection>
         <MiddleCards />
-        <OurClasses />
+        <OurClasses dances={dances} />
         <UpcomingEvents events={upcomingEvents} />
         {/*  <OurInstructors /> */}
         <OurTeachers instructors={instructors} />
@@ -63,11 +70,13 @@ export const getStaticProps: GetStaticProps = async () => {
   const eventData = await client.fetch(groqQueryEvents);
   const latestNewsData = await client.fetch(groqQueryLatestNews);
   const instructorsData = await client.fetch(groqQueryInstructors);
+  const dancesData = await getAllDancesTeached();
   return {
     props: {
       upcomingEvents: eventData,
       latestNews: latestNewsData,
       instructors: instructorsData,
+      dances: dancesData,
     },
     revalidate: 1000,
   };

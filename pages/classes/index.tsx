@@ -6,8 +6,10 @@ import { CtaBanner } from "../../components/Shared/CtaBanner";
 import { FreeLessonSignup } from "../../components/Shared/FreeLessonSignup";
 import { OurClasses } from "../../components/Shared/OurClasses/OurClasses";
 import { WhatYouGet } from "../../components/Shared/WhatYouGet";
+import { getAllDancesTeached } from "../../lib/sanityFetch";
+import { IDances } from "../../types/sanity-types";
 
-const ClassesPage = () => {
+const ClassesPage: React.FC<{ dances: IDances[] }> = ({ dances }) => {
   return (
     <>
       <Head>
@@ -29,10 +31,19 @@ const ClassesPage = () => {
           />
         </HeroSection>
         <WhatYouGet />
-        <OurClasses />
+        <OurClasses dances={dances} />
         <FreeLessonSignup />
       </main>
     </>
   );
 };
 export default ClassesPage;
+
+export const getStaticProps = async () => {
+  const dancesData = await getAllDancesTeached();
+  return {
+    props: {
+      dances: dancesData,
+    },
+  };
+};
