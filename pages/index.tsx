@@ -11,17 +11,12 @@ import { CtaBanner } from "../components/Shared/CtaBanner";
 import { OurClasses } from "../components/Shared/OurClasses/OurClasses";
 import { getTodayDate } from "../lib/helper-functions";
 import { client } from "../lib/sanity.client";
-import { getAllDancesTeached } from "../lib/sanityFetch";
-import {
-  IDances,
-  IEvent,
-  IInstructors,
-  INewsCard,
-} from "../types/sanity-types";
+import { getAllDancesTeached, getLatestPosts } from "../lib/sanityFetch";
+import { IDances, IEvent, IInstructors, IPost } from "../types/sanity-types";
 
 const HomePage: React.FC<{
   upcomingEvents: IEvent[];
-  latestNews: INewsCard[];
+  latestNews: IPost[];
   instructors: IInstructors[];
   dances: IDances[];
 }> = ({ upcomingEvents, latestNews, instructors, dances }) => {
@@ -59,25 +54,23 @@ const HomePage: React.FC<{
 export default HomePage;
 export const getStaticProps: GetStaticProps = async () => {
   const groqQueryEvents = `\*[_type=='event' && eventStart>="${getTodayDate()}"] \| order(eventStart asc)`;
-  const groqQueryLatestNews = `\*[_type=='post' \|\| _type=='event']{...,
-    categories[]->,
-    author->} \| order(_createdAt desc)[0..2]`;
+
   const groqQueryInstructors = `\*[_type=='instructors' && (
     !(_id in path("drafts.**")))]{
       ...,
       knowledge[]->
     }`;
   const eventData = await client.fetch(groqQueryEvents);
-  const latestNewsData = await client.fetch(groqQueryLatestNews);
   const instructorsData = await client.fetch(groqQueryInstructors);
+  const latestPostData = await getLatestPosts(3);
   const dancesData = await getAllDancesTeached();
   return {
     props: {
       upcomingEvents: eventData,
-      latestNews: latestNewsData,
+      latestNews: latestPostData,
       instructors: instructorsData,
       dances: dancesData,
     },
-    revalidate: 1000,
+    revalidate: 120,
   };
 };

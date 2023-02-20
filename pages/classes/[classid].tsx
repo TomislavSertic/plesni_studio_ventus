@@ -54,6 +54,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       dance,
     },
+    revalidate: 120,
   };
 };
 

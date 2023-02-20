@@ -58,7 +58,18 @@ export interface IAuthor {
   image: string;
   _id: string;
 }
-export interface INewsCard {
+export interface IPost {
+  _id: string;
+  title: string;
+  slug: ISlug;
+  author: IAuthor;
+  mainImage: string;
+  categories: ICategory[];
+  publishedAt: string;
+  description: string;
+  body: any;
+}
+/* export interface INewsCard {
   _id: string;
   postType: string;
   title: string;
@@ -70,7 +81,7 @@ export interface INewsCard {
   categories: string[];
   description: string;
   publishedAt: string;
-}
+} */
 export interface IClass {
   class: string;
   level: string;
