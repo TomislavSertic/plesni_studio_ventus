@@ -5,18 +5,22 @@ import { EventBody } from "../../components/EventPage/EventBody";
 import { EventDetails } from "../../components/EventPage/EventDetails";
 import { EventHeader } from "../../components/EventPage/EventHeader";
 import { Wrapper } from "../../components/Layout/Wrapper/Wrapper";
+import { NewsBody } from "../../components/NewsPage/NewsBody";
+import { NewsPostHeader } from "../../components/NewsPage/NewsPostHeader";
+import { LightPageTitle } from "../../components/UI/LightPageTitle";
 import { client, urlFor } from "../../lib/sanity.client";
-import { IEvent } from "../../types/sanity-types";
+import { getPostBySlug, getPostsPaths } from "../../lib/sanityFetch";
+import { IEvent, IPost } from "../../types/sanity-types";
 
-const SingleEventPage: React.FC<{ event: IEvent }> = ({ event }) => {
-  if (!event) {
+const NewsPostPage: React.FC<{ news: IPost }> = ({ news }) => {
+  if (!news) {
     return (
       <Wrapper>
         <h1>Loading...</h1>
       </Wrapper>
     );
   }
-  const { title, mainImage, description, author } = event;
+  const { title, mainImage, description, author } = news;
   const imageUrl = mainImage ? urlFor(mainImage).url() : "";
   const headTitle = `PS Ventus - ${title.substring(0, 10)}...`;
   return (
@@ -32,57 +36,41 @@ const SingleEventPage: React.FC<{ event: IEvent }> = ({ event }) => {
         <meta property="twitter:title " content={title} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="https://esportinicijativa.hr" />
-        <meta name="twitter:creator" content={author} />
+        <meta name="twitter:creator" content={author.name} />
       </Head>
       <Wrapper>
         <section>
-          <EventHeader event={event} />
-          <EventBody event={event} />
-          <EventDetails event={event} />
+          <LightPageTitle title={news.title} />
+          <NewsPostHeader news={news} />
+          <NewsBody news={news} />
         </section>
       </Wrapper>
     </>
   );
 };
 
-export default SingleEventPage;
+export default NewsPostPage;
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  if (!context.params) {
+  if (!context.params || !context.params.postid) {
     return {
       props: {
         event: null,
       },
     };
   }
-  const slug = context.params.eventid;
-  const eventsListData = await client.fetch(
-    `
-        \*[_type=="event"]{
-            ...,
-            categories[]->,
-            organizator->
-        }
-        `
-  );
-  const event = eventsListData.find(
-    (event: IEvent) => event.slug.current === slug
-  );
-
+  const slug = context.params.postid;
+  const news = await getPostBySlug(slug);
   return {
     props: {
-      event,
+      news,
     },
     revalidate: 120,
   };
 };
 
 export const getStaticPaths = async () => {
-  const eventsListData = await client.fetch(`
-  \*[_type=='event']`);
-  const pathsList = eventsListData.map((event: IEvent) => {
-    return { params: { eventid: event.slug.current } };
-  });
+  const pathsList = await getPostsPaths();
   return {
     paths: pathsList,
     fallback: true,

@@ -64,12 +64,12 @@ export interface IPost {
   slug: ISlug;
   author: IAuthor;
   mainImage: string;
-  categories: string[];
+  categories: ICategory[];
   publishedAt: string;
   description: string;
   body: any;
 }
-export interface INewsCard {
+/* export interface INewsCard {
   _id: string;
   postType: string;
   title: string;
@@ -81,7 +81,7 @@ export interface INewsCard {
   categories: string[];
   description: string;
   publishedAt: string;
-}
+} */
 export interface IClass {
   class: string;
   level: string;

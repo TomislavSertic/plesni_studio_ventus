@@ -73,7 +73,8 @@ export const getAllPosts = async () => {
   const postGroq = `
      \*[_type=='post' && (!(_id in path("drafts.**")))]{
         ...,
-        categories[]->
+        categories[]->,
+        author->
      }
     `;
 
