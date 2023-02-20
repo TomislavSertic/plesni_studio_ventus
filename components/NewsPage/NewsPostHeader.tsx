@@ -7,7 +7,6 @@ import { IPost } from "../../types/sanity-types";
 
 export const NewsPostHeader: React.FC<{ news: IPost }> = ({ news }) => {
   const { publishedAt, author, categories, mainImage, title } = news;
-  console.log(news);
   return (
     <div className={styles["news-post-header"]}>
       <time className={styles["published"]}>{readableDate(publishedAt)}</time>

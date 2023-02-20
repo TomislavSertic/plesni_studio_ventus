@@ -58,7 +58,7 @@ export const Navigation = () => {
                     height={18}
                   />
                 </span>{" "}
-                <a href="tel:+385914455915">+385914455915</a>
+                <a href="tel:+385914455914">+385914455914</a>
               </p>
             </div>
           )}

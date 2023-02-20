@@ -23,6 +23,9 @@
     time {
       @include bodyFontRegular;
     }
+    address {
+      @include bodyFontSmRegular;
+    }
   }
 }
 .desktop-table {
@@ -48,7 +51,8 @@
         background-color: $color-primary-300;
         .class-level,
         .class-name,
-        .time {
+        .time,
+        .address {
           color: $color-light;
           transition: 0.3s all;
         }
@@ -63,6 +67,10 @@
       .time {
         color: $color-primary-300;
         @include h3FontMedium;
+      }
+      .address {
+        padding-top: 1rem;
+        @include bodyFontSmRegular;
       }
     }
   }

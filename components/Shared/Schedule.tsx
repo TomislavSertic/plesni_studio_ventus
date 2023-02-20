@@ -1,20 +1,28 @@
 import React from "react";
 import styles from "./Schedule.module.scss";
 import { Wrapper } from "../Layout/Wrapper/Wrapper";
+import Link from "next/link";
 
 const SCHEDULE = {
   Ponedjeljak: {
-    numberOfClasses: 1,
+    numberOfClasses: 0,
+    classes: [],
+  },
+  Utorak: {
+    numberOfClasses: 0,
     classes: [
+      null,
+      null,
       {
-        class: "Jazz",
-        level: "Početnici",
-        timeStart: "09:00",
-        timeEnd: "10:30",
+        class: "Društveni Plesovi",
+        level: "Srednja Razina",
+        slug: "drustveni-plesovi",
+        location: "Magazinska 9a,Zagreb",
+        timeStart: "19:00",
+        timeEnd: "20:30",
       },
     ],
   },
-  Utorak: { numberOfClasses: 0, classes: [] },
   Srijeda: { numberOfClasses: 0, classes: [] },
   Četvrtak: {
     numberOfClasses: 0,
@@ -22,10 +30,12 @@ const SCHEDULE = {
       null,
       null,
       {
-        class: "Samba",
-        level: "Početnici",
-        timeStart: "18:00",
-        timeEnd: "19:00",
+        class: "Društveni Plesovi",
+        level: "Srednja Razina",
+        slug: "drustveni-plesovi",
+        location: "Magazinska 9a,Zagreb",
+        timeStart: "18:30",
+        timeEnd: "20:00",
       },
     ],
   },
@@ -51,17 +61,22 @@ export const Schedule = () => {
       for (let key of objectKeys) {
         if (SCHEDULE[key].classes[i]) {
           td.push(
-            <td key={Math.random()} className={styles["td-value"]}>
-              <p className={styles["class-name"]}>
-                {SCHEDULE[key].classes[i]?.class}
-              </p>
-              <p className={styles["class-level"]}>
-                {SCHEDULE[key].classes[i]?.level}
-              </p>
-              <time className={styles["time"]}>
-                {SCHEDULE[key].classes[i]?.timeStart}
-              </time>
-            </td>
+            <Link href={`/classes/${SCHEDULE[key].classes[i]?.slug}`}>
+              <td key={Math.random()} className={styles["td-value"]}>
+                <p className={styles["class-name"]}>
+                  {SCHEDULE[key].classes[i]?.class}
+                </p>
+                <p className={styles["class-level"]}>
+                  {SCHEDULE[key].classes[i]?.level}
+                </p>
+                <time className={styles["time"]}>
+                  {SCHEDULE[key].classes[i]?.timeStart}
+                </time>
+                <address className={styles["address"]}>
+                  {SCHEDULE[key].classes[i]?.location}
+                </address>
+              </td>
+            </Link>
           );
         } else {
           td.push(
@@ -126,9 +141,12 @@ export const MobileScheduleTable = () => {
                       className={styles["lesson"]}
                     >
                       <h2>{lesson.class}</h2>
-                      <time>
-                        {lesson.timeStart} - {lesson.timeEnd}
-                      </time>
+                      <div className="time-address-container">
+                        <time>
+                          {lesson.timeStart} - {lesson.timeEnd}
+                        </time>
+                        <address>{lesson.location}</address>
+                      </div>
                     </li>
                   );
                 } else {
