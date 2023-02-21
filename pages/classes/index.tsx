@@ -48,5 +48,6 @@ export const getStaticProps = async () => {
     props: {
       dances: dancesData,
     },
+    revalidate: 320,
   };
 };
