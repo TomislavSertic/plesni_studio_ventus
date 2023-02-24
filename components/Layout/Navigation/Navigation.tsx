@@ -38,7 +38,7 @@ export const Navigation = () => {
                 className={styles["price-list-link"]}
                 href="/schedule#price-list"
               >
-                cijenik
+                cjenik
               </Link>
               <p className={styles["contact-item"]}>
                 <span className={styles.icon}>
