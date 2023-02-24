@@ -40,9 +40,7 @@ export const PriceList = () => {
             <span className={styles["item-price"]}>€ 270 / kn 2034.32</span>
           </div>
           <div className={styles["list-item"]}>
-            <span className={styles["item-title"]}>
-              20h + 5h GRATIS (POKLON besplatna mjesečna grupa)
-            </span>
+            <span className={styles["item-title"]}>20h + 5h GRATIS</span>
             <span className={styles["item-price"]}>€ 540 / kn 4068.63</span>
           </div>
           <p className={styles["info-text"]}>
