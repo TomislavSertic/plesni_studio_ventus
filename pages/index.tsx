@@ -41,7 +41,7 @@ const HomePage: React.FC<{
           <CtaBanner
             buttonPath="/schedule#free-lesson"
             buttonText="Prijavi se"
-            subtitle="Prijavite se i 45-minuta lekcija upoznavanja - potpuno besplatno!!"
+            subtitle="Prijavite se i prve dvije grupne lekcije - potpuno besplatno!"
             title="Dobro Došli Novi Studenti"
           />
         </HeroSection>

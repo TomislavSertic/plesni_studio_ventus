@@ -5,7 +5,7 @@
   list-style: none;
   gap: 1rem;
 }
-@media screen and (max-width: $breakpoint-mobile) {
+@media screen and (max-width: $breakpoint-tablet) {
   .navigationList {
     display: none;
   }

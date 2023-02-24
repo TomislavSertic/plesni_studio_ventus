@@ -6,6 +6,7 @@ import { HeroSection } from "../../components/Layout/HeroSection/HeroSection";
 import { CtaBanner } from "../../components/Shared/CtaBanner";
 import { FreeLessonSignup } from "../../components/Shared/FreeLessonSignup";
 import { OurClasses } from "../../components/Shared/OurClasses/OurClasses";
+import { PriceList } from "../../components/Shared/PriceList";
 import { Schedule } from "../../components/Shared/Schedule";
 import { getAllInstructors } from "../../lib/sanityFetch";
 import { IInstructors } from "../../types/sanity-types";
@@ -30,13 +31,14 @@ const SchedulePage: React.FC<{ instructors: IInstructors[] }> = ({
           <CtaBanner
             buttonPath="#free-lesson"
             buttonText="Prijavi se"
-            subtitle="Prijavite se i 45-minuta lekcija upoznavanja - potpuno besplatno!!"
+            subtitle="Prijavite se i prve dvije grupne lekcije - potpuno besplatno!!"
             title="Odaberi savršeno vrijeme za sat plesa"
           />
         </HeroSection>
         <Schedule />
         <OurTeachers instructors={instructors} />
         <FreeLessonSignup />
+        <PriceList />
       </main>
     </>
   );

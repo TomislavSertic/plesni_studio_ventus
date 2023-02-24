@@ -5,6 +5,7 @@ import { HeroSection } from "../../components/Layout/HeroSection/HeroSection";
 import { CtaBanner } from "../../components/Shared/CtaBanner";
 import { FreeLessonSignup } from "../../components/Shared/FreeLessonSignup";
 import { OurClasses } from "../../components/Shared/OurClasses/OurClasses";
+import { PriceList } from "../../components/Shared/PriceList";
 import { WhatYouGet } from "../../components/Shared/WhatYouGet";
 import {
   getAllDancesTeached,
@@ -29,13 +30,14 @@ const ClassesPage: React.FC<{ dances: IDances[] }> = ({ dances }) => {
           <HeroTitle mainTitle="PLESOVI" subTitle="" />
           <CtaBanner
             buttonPath="#free-lesson"
-            buttonText="Prijavi se za besplatni sat"
+            buttonText="Prijavite se i prve dvije grupne lekcije - potpuno besplatno!"
             title="Dobro Došli Novi Studenti"
           />
         </HeroSection>
         <WhatYouGet />
         <OurClasses dances={dances} />
         <FreeLessonSignup />
+        <PriceList />
       </main>
     </>
   );
