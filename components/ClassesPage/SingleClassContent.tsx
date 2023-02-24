@@ -36,13 +36,14 @@ export const SingleClassContent: React.FC<{ dance: IDances }> = ({ dance }) => {
             </InfoBoxItem>
             <InfoBoxItem title="Načini Predavanja">
               <>
-                {teachingOptions.map((option) => {
-                  return (
-                    <p className={styles["dance-class"]} key={option}>
-                      {option}
-                    </p>
-                  );
-                })}
+                {teachingOptions &&
+                  teachingOptions.map((option) => {
+                    return (
+                      <p className={styles["dance-class"]} key={option}>
+                        {option}
+                      </p>
+                    );
+                  })}
               </>
             </InfoBoxItem>
           </InfoBox>

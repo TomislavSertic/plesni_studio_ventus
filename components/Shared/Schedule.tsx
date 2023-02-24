@@ -61,22 +61,22 @@ export const Schedule = () => {
       for (let key of objectKeys) {
         if (SCHEDULE[key].classes[i]) {
           td.push(
-            <Link href={`/classes/${SCHEDULE[key].classes[i]?.slug}`}>
-              <td key={Math.random()} className={styles["td-value"]}>
-                <p className={styles["class-name"]}>
+            <td key={Math.random()} className={styles["td-value"]}>
+              <p className={styles["class-name"]}>
+                <Link href={`/classes/${SCHEDULE[key].classes[i]?.slug}`}>
                   {SCHEDULE[key].classes[i]?.class}
-                </p>
-                <p className={styles["class-level"]}>
-                  {SCHEDULE[key].classes[i]?.level}
-                </p>
-                <time className={styles["time"]}>
-                  {SCHEDULE[key].classes[i]?.timeStart}
-                </time>
-                <address className={styles["address"]}>
-                  {SCHEDULE[key].classes[i]?.location}
-                </address>
-              </td>
-            </Link>
+                </Link>
+              </p>
+              <p className={styles["class-level"]}>
+                {SCHEDULE[key].classes[i]?.level}
+              </p>
+              <time className={styles["time"]}>
+                {SCHEDULE[key].classes[i]?.timeStart}
+              </time>
+              <address className={styles["address"]}>
+                {SCHEDULE[key].classes[i]?.location}
+              </address>
+            </td>
           );
         } else {
           td.push(

@@ -25,6 +25,16 @@
   color: $color-secondary-500;
   text-transform: uppercase;
   @include bodyFontSmRegular;
+  .price-list-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem;
+    transition: 0.4s all;
+    &:hover {
+      color: $color-primary-300;
+    }
+  }
   .contact-item {
     display: flex;
     justify-content: center;
@@ -92,6 +102,10 @@
     }
     .separator {
       margin: 0 0.4rem;
+    }
+
+    .price-list-link {
+      display: none;
     }
   }
 }

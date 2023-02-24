@@ -17,6 +17,15 @@ export const NavigationList: React.FC<{ closeModal: Function }> = ({
           />
         );
       })}
+      <NavigationItem
+        key={123442}
+        closeModal={closeModal}
+        linkData={{
+          name: "cjenik",
+          path: "/schedule#price-list",
+          id: 123532,
+        }}
+      />
     </ul>
   );
 };

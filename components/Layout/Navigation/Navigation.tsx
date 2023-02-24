@@ -34,6 +34,12 @@ export const Navigation = () => {
         <div className={styles["container"]}>
           {!scrolled && (
             <div className={styles.contact}>
+              <Link
+                className={styles["price-list-link"]}
+                href="/schedule#price-list"
+              >
+                cijenik
+              </Link>
               <p className={styles["contact-item"]}>
                 <span className={styles.icon}>
                   <Image
