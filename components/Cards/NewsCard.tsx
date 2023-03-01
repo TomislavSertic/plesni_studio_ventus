@@ -27,14 +27,19 @@ export const NewsCard: React.FC<{ newsPreview: IPost }> = ({ newsPreview }) => {
             width={300}
             height={200}
             alt={title}
-            src={urlFor(mainImage).url()}
+            src={
+              mainImage
+                ? urlFor(mainImage).url()
+                : "/images/main-logo-whitebg-space.png"
+            }
           />
         </div>
       </Link>
       <div className={styles["tag-list"]}>
-        {categories.map((category) => (
-          <span key={category._id}>#{category.title}</span>
-        ))}
+        {categories &&
+          categories.map((category) => (
+            <span key={category._id}>#{category.title}</span>
+          ))}
       </div>
       <div className={styles["content"]}>
         <Link href={`/news/${slug.current}`}>
