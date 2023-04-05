@@ -43,6 +43,15 @@ export const PriceList = () => {
             <span className={styles["item-title"]}>20h + 5h GRATIS</span>
             <span className={styles["item-price"]}>€ 540 / kn 4068.63</span>
           </div>
+          <div className={styles["list-title"]}>
+            <h2>Mladenci</h2>
+          </div>
+          <div className={styles["list-item"]}>
+            <span className={styles["item-title"]}>
+              5h privatnih za koerografiju + tečaj plesa
+            </span>
+            <span className={styles["item-price"]}>€ 200 / kn 1.506.65</span>
+          </div>
           <p className={styles["info-text"]}>
             * <Link href="/schedule#free-lesson">Prijavom </Link>
             ostvarite besplatna prva dva treninga u grupi po želji
