@@ -28,11 +28,15 @@ export const InstructorPageContent: React.FC<{ instructor: IInstructors }> = ({
             <InfoBoxItem title="Predaje">
               <>
                 {knowledge.map((dance) => {
-                  return (
-                    <p className={styles["dance-class"]} key={dance._id}>
-                      {dance.name}
-                    </p>
-                  );
+                  if (dance) {
+                    return (
+                      <p className={styles["dance-class"]} key={dance._id}>
+                        {dance.name}
+                      </p>
+                    );
+                  } else {
+                    return <></>;
+                  }
                 })}
               </>
             </InfoBoxItem>

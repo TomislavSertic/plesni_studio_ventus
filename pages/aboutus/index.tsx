@@ -14,6 +14,7 @@ import { IInstructors } from "../../types/sanity-types";
 const ClassesPage: React.FC<{ instructors: IInstructors[] }> = ({
   instructors,
 }) => {
+  console.log(instructors);
   return (
     <>
       <Head>
@@ -45,6 +46,7 @@ const ClassesPage: React.FC<{ instructors: IInstructors[] }> = ({
 export default ClassesPage;
 export const getStaticProps = async () => {
   const instructors = await getAllInstructors();
+
   return {
     props: {
       instructors: instructors,
