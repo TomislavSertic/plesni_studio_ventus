@@ -20,6 +20,7 @@ export const InstructorPageContent: React.FC<{ instructor: IInstructors }> = ({
             alt="domagoj sertic"
             width={800}
             height={600}
+            loading="eager"
           />
         </div>
         <div className={styles["info-container"]}>

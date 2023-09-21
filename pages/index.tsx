@@ -65,6 +65,11 @@ export const getStaticProps: GetStaticProps = async () => {
       ...,
       knowledge[]->
     }`;
+  const objekt = {
+    a: 2,
+    banan: true,
+  };
+
   const eventData = await client.fetch(groqQueryEvents);
   const instructorsData = await client.fetch(groqQueryInstructors);
   const latestPostData = await getLatestPosts(3);

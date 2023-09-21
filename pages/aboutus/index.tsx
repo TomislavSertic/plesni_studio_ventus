@@ -14,7 +14,6 @@ import { IInstructors } from "../../types/sanity-types";
 const ClassesPage: React.FC<{ instructors: IInstructors[] }> = ({
   instructors,
 }) => {
-  console.log(instructors);
   return (
     <>
       <Head>
