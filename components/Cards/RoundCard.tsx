@@ -27,6 +27,7 @@ export const RoundCard: React.FC<{ cardData: IDances }> = ({ cardData }) => {
         width={300}
         height={300}
         alt={name}
+        loading="lazy"
       />
       <div className={styles["card-body"]}>
         <span className={styles["plus-icon"]}>

@@ -12,6 +12,7 @@ export const HeroSection: React.FC<{
         alt="decoration header image"
         width={1400}
         height={500}
+        loading="eager"
       />
       <div className={styles["topDecoration"]}></div>
       {children}
