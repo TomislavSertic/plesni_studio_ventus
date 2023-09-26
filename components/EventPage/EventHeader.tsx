@@ -36,6 +36,7 @@ export const EventHeader: React.FC<{ event: IEvent }> = ({ event }) => {
           alt={title}
           width={800}
           height={800}
+          loading="eager"
         />
       </div>
     </div>
