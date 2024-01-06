@@ -16,42 +16,34 @@ export const PriceList = () => {
             <span className={styles["item-title"]}>
               Djeca - po grupi - mjesečna članarina
             </span>
-            <span className={styles["item-price"]}>€ 40 / kn 301.38</span>
+            <span className={styles["item-price"]}>€ 40 </span>
           </div>
           <div className={styles["list-item"]}>
             <span className={styles["item-title"]}>
               Odrasli - po grupi - mjesečna članarina
             </span>
-            <span className={styles["item-price"]}>€ 40 / kn 301.38</span>
+            <span className={styles["item-price"]}>€ 45 </span>
           </div>
           <div className={styles["list-title"]}>
             <h2>Privatni Sati</h2>
           </div>
           <div className={styles["list-item"]}>
             <span className={styles["item-title"]}>1h</span>
-            <span className={styles["item-price"]}>€ 27 / kn 203.43</span>
+            <span className={styles["item-price"]}>€ 35 </span>
           </div>
           <div className={styles["list-item"]}>
             <span className={styles["item-title"]}>6h + 1h GRATIS</span>
-            <span className={styles["item-price"]}>€ 162 / kn 1220.59</span>
+            <span className={styles["item-price"]}>€ 210 </span>
           </div>
           <div className={styles["list-item"]}>
             <span className={styles["item-title"]}>10h + 2h GRATIS</span>
-            <span className={styles["item-price"]}>€ 270 / kn 2034.32</span>
+            <span className={styles["item-price"]}>€ 350 </span>
           </div>
           <div className={styles["list-item"]}>
             <span className={styles["item-title"]}>20h + 5h GRATIS</span>
-            <span className={styles["item-price"]}>€ 540 / kn 4068.63</span>
+            <span className={styles["item-price"]}>€ 700 </span>
           </div>
-          <div className={styles["list-title"]}>
-            <h2>Mladenci</h2>
-          </div>
-          <div className={styles["list-item"]}>
-            <span className={styles["item-title"]}>
-              5h privatnih za koerografiju + tečaj plesa
-            </span>
-            <span className={styles["item-price"]}>€ 200 / kn 1.506.65</span>
-          </div>
+
           <p className={styles["info-text"]}>
             * <Link href="/schedule#free-lesson">Prijavom </Link>
             ostvarite besplatna prva dva treninga u grupi po želji
