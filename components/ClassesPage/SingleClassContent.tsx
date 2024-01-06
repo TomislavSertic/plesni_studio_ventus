@@ -27,6 +27,7 @@ export const SingleClassContent: React.FC<{ dance: IDances }> = ({ dance }) => {
             alt={name}
             width={800}
             height={600}
+            loading='eager'
           />
         </div>
         <div className={styles["info-container"]}>
