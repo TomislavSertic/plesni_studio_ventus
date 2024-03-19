@@ -10,7 +10,7 @@ export const PriceList = () => {
         <h1 className={styles["title"]}>Cjenik Usluga</h1>
         <div className={styles["list"]}>
           <div className={styles["list-title"]}>
-            <h2>Grupe</h2>
+            <h2>Općenito Grupe</h2>
           </div>
           <div className={styles["list-item"]}>
             <span className={styles["item-title"]}>
@@ -20,9 +20,31 @@ export const PriceList = () => {
           </div>
           <div className={styles["list-item"]}>
             <span className={styles["item-title"]}>
-              Odrasli - po grupi - mjesečna članarina
+              {"["}Zagreb{"]"} Odrasli - po grupi - mjesečna članarina
+            </span>
+            <span className={styles["item-price"]}>€ 50 </span>
+          </div>
+          <div className={styles["list-item"]}>
+            <span className={styles["item-title"]}>
+              {"["}Novi Vinodolski/Dramalj{"]"} Odrasli - po grupi - mjesečna
+              članarina
             </span>
             <span className={styles["item-price"]}>€ 45 </span>
+          </div>
+          <div className={styles["list-title"]}>
+            <h2>Specifične Grupe</h2>
+          </div>
+          <div className={styles["list-item"]}>
+            <span className={styles["item-title"]}>
+              Početni tečaj u parovima - po paru - mjesečna članarina
+            </span>
+            <span className={styles["item-price"]}>€ 70 </span>
+          </div>
+          <div className={styles["list-item"]}>
+            <span className={styles["item-title"]}>
+              Plesna rekreacija - po osobi - mjesečna članarina
+            </span>
+            <span className={styles["item-price"]}>€ 40 </span>
           </div>
           <div className={styles["list-title"]}>
             <h2>Privatni Sati</h2>
