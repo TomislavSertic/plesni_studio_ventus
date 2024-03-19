@@ -6,7 +6,25 @@ import Link from "next/link";
 const SCHEDULE = {
   Ponedjeljak: {
     numberOfClasses: 0,
-    classes: [],
+    classes: [
+      null,
+      {
+        class: "Dječji program 'Starpoint'",
+        level: "Početna Razina",
+        slug: "drustveni-plesovi",
+        location: "Dramalj 47, Hrvatski Narodni Dom",
+        timeStart: "16:00",
+        timeEnd: "18:00",
+      },
+      {
+        class: "Dječji program 'Starpoint'",
+        level: "Početna Razina",
+        slug: "drustveni-plesovi",
+        location: "Lokvica 2, Novi Vinodolski",
+        timeStart: "18:30",
+        timeEnd: "20:30",
+      },
+    ],
   },
   Utorak: {
     numberOfClasses: 0,
@@ -14,33 +32,88 @@ const SCHEDULE = {
       null,
       null,
       {
-        class: "Društveni Plesovi",
-        level: "Srednja Razina",
+        class: "Dječji program 'Starpoint'",
+        level: "Početna Razina",
         slug: "drustveni-plesovi",
         location: "Magazinska 9a,Zagreb",
-        timeStart: "19:00",
+        timeStart: "17:30",
+        timeEnd: "19:00",
+      },
+    ],
+  },
+  Srijeda: {
+    numberOfClasses: 0,
+    classes: [
+      null,
+      {
+        class: "Dječji program 'Starpoint'",
+        level: "Početna Razina",
+        slug: "drustveni-plesovi",
+        location: "Dramalj 47, Hrvatski Narodni Dom",
+        timeStart: "16:00",
+        timeEnd: "18:00",
+      },
+      {
+        class: "Dječji program 'Starpoint'",
+        level: "Početna Razina",
+        slug: "drustveni-plesovi",
+        location: "Lokvica 2, Novi Vinodolski",
+        timeStart: "18:30",
         timeEnd: "20:30",
       },
     ],
   },
-  Srijeda: { numberOfClasses: 0, classes: [] },
   Četvrtak: {
     numberOfClasses: 0,
     classes: [
       null,
       null,
       {
-        class: "Društveni Plesovi",
+        class: "Dječji program 'Starpoint'",
+        level: "Početna Razina",
+        slug: "drustveni-plesovi",
+        location: "Magazinska 9a,Zagreb",
+        timeStart: "17:30",
+        timeEnd: "19:00",
+      },
+    ],
+  },
+  Petak: {
+    numberOfClasses: 0,
+    classes: [
+      null,
+      null,
+      {
+        class: "Početni tečaj u parovima",
+        level: "Početna Razina",
+        slug: "drustveni-plesovi",
+        location: "Magazinska 9a,Zagreb",
+        timeStart: "17:00",
+        timeEnd: "18:30",
+      },
+      {
+        class: "Plesna rekreacija",
         level: "Srednja Razina",
         slug: "drustveni-plesovi",
         location: "Magazinska 9a,Zagreb",
         timeStart: "18:30",
-        timeEnd: "20:00",
+        timeEnd: "20:30",
       },
     ],
   },
-  Petak: { numberOfClasses: 0, classes: [] },
-  Subota: { numberOfClasses: 0, classes: [] },
+  Subota: {
+    numberOfClasses: 0,
+    classes: [
+      {
+        class: "Dječji program 'Starpoint'",
+        level: "Početna Razina",
+        slug: "drustveni-plesovi",
+        location: "Magazinska 9a,Zagreb",
+        timeStart: "11:00",
+        timeEnd: "12:30",
+      },
+    ],
+  },
   Nedjelja: { numberOfClasses: 0, classes: [] },
 };
 const numberOfTr = (objectData: any) => {
@@ -71,7 +144,9 @@ export const Schedule = () => {
                 {SCHEDULE[key].classes[i]?.level}
               </p>
               <time className={styles["time"]}>
-                {SCHEDULE[key].classes[i]?.timeStart}
+                <span>{SCHEDULE[key].classes[i]?.timeStart}</span>
+                <span className={styles["separator"]}>-</span>
+                <span>{SCHEDULE[key].classes[i]?.timeEnd}</span>
               </time>
               <address className={styles["address"]}>
                 {SCHEDULE[key].classes[i]?.location}
