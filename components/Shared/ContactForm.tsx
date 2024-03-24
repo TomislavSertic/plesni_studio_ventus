@@ -5,7 +5,7 @@ import { FormStatus } from "../UI/FormStatus";
 import { FormButton } from "../UI/FormElements/FormButton";
 import { StatusAlertModal } from "../UI/StatusAlertModal";
 import { ValidateEmail } from "../../lib/helper-functions";
-
+import axios from "axios";
 export const ContactForm = () => {
   const [formStep, setFormStep] = useState(0);
   const [contactEmail, setContactEmail] = useState(true);
@@ -66,23 +66,15 @@ export const ContactForm = () => {
       message: messageRef.current?.value,
     };
     setContactEmail(true);
-    await fetch("/api/contact", {
-      method: "POST",
-      body: JSON.stringify(contactSignup),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success) {
-          setFormStep(1);
-          setContactEmail(true);
-        } else {
-          setFormStep(2);
-          setContactEmail(true);
-        }
-      });
+    try {
+      await axios.post("/api/contact", contactSignup);
+      await axios.post("/api/mail", { ...contactSignup, formType: "Contact" });
+      setFormStep(1);
+      setContactEmail(true);
+    } catch (error) {
+      setFormStep(2);
+      setContactEmail(true);
+    }
   };
   return (
     <Wrapper>

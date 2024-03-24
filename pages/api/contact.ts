@@ -28,6 +28,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         email: data.email,
         phoneNumber: data.phoneNumber,
         message: data.message,
+        dateRecived: Date.now(),
       });
       res
         .status(201)

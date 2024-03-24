@@ -5,6 +5,7 @@ import { FormStatus } from "../UI/FormStatus";
 import { FormButton } from "../UI/FormElements/FormButton";
 import { StatusAlertModal } from "../UI/StatusAlertModal";
 import { ValidateEmail } from "../../lib/helper-functions";
+import axios from "axios";
 
 export const FreeLessonSignup = () => {
   const [formStep, setFormStep] = useState(0);
@@ -64,7 +65,19 @@ export const FreeLessonSignup = () => {
       message: messageRef.current?.value,
     };
     setContactEmail(true);
-    await fetch("/api/registration", {
+    try {
+      await axios.post("/api/registration", contactSignup);
+      await axios.post("/api/mail", {
+        ...contactSignup,
+        formType: "Registration",
+      });
+      setFormStep(1);
+      setContactEmail(true);
+    } catch (error) {
+      setFormStep(2);
+      setContactEmail(true);
+    }
+    /* await fetch("/api/registration", {
       method: "POST",
       body: JSON.stringify(contactSignup),
       headers: {
@@ -79,7 +92,7 @@ export const FreeLessonSignup = () => {
         } else {
           setFormStep(2);
         }
-      });
+      }); */
   };
   return (
     <Wrapper>
