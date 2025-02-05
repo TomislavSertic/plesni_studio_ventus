@@ -16,7 +16,7 @@ export const PriceList = () => {
             <span className={styles["item-title"]}>
               Djeca - po grupi - mjesečna članarina
             </span>
-            <span className={styles["item-price"]}>€ 40 </span>
+            <span className={styles["item-price"]}>€ 50 </span>
           </div>
           <div className={styles["list-item"]}>
             <span className={styles["item-title"]}>
@@ -29,7 +29,7 @@ export const PriceList = () => {
               {"["}Novi Vinodolski/Dramalj{"]"} Odrasli - po grupi - mjesečna
               članarina
             </span>
-            <span className={styles["item-price"]}>€ 45 </span>
+            <span className={styles["item-price"]}>€ 50 </span>
           </div>
           <div className={styles["list-title"]}>
             <h2>Specifične Grupe</h2>
@@ -40,30 +40,30 @@ export const PriceList = () => {
             </span>
             <span className={styles["item-price"]}>€ 70 </span>
           </div>
-          <div className={styles["list-item"]}>
+          {/*  <div className={styles["list-item"]}>
             <span className={styles["item-title"]}>
               Plesna rekreacija - po osobi - mjesečna članarina
             </span>
             <span className={styles["item-price"]}>€ 40 </span>
-          </div>
+          </div> */}
           <div className={styles["list-title"]}>
             <h2>Privatni Sati</h2>
           </div>
           <div className={styles["list-item"]}>
             <span className={styles["item-title"]}>1h</span>
-            <span className={styles["item-price"]}>€ 35 </span>
+            <span className={styles["item-price"]}>€ 40 </span>
           </div>
           <div className={styles["list-item"]}>
             <span className={styles["item-title"]}>6h + 1h GRATIS</span>
-            <span className={styles["item-price"]}>€ 210 </span>
+            <span className={styles["item-price"]}>€ 240 </span>
           </div>
           <div className={styles["list-item"]}>
             <span className={styles["item-title"]}>10h + 2h GRATIS</span>
-            <span className={styles["item-price"]}>€ 350 </span>
+            <span className={styles["item-price"]}>€ 400 </span>
           </div>
           <div className={styles["list-item"]}>
             <span className={styles["item-title"]}>20h + 5h GRATIS</span>
-            <span className={styles["item-price"]}>€ 700 </span>
+            <span className={styles["item-price"]}>€ 800 </span>
           </div>
 
           <p className={styles["info-text"]}>

@@ -5,117 +5,104 @@ import Link from "next/link";
 
 const SCHEDULE = {
   Ponedjeljak: {
-    numberOfClasses: 0,
+    numberOfClasses: 1,
     classes: [
+      // Večernji tečaj – dva prazna objekta prije
+
+      null,
       null,
       {
-        class: "Dječji program 'Starpoint'",
-        level: "Početna Razina",
+        class: "Tečaj Plesa (od 17.2.2025)",
+        level: "Početna razina",
         slug: "drustveni-plesovi",
-        location: "Dramalj 47, Hrvatski Narodni Dom",
-        timeStart: "16:00",
-        timeEnd: "18:00",
-      },
-      {
-        class: "Dječji program 'Starpoint'",
-        level: "Početna Razina",
-        slug: "drustveni-plesovi",
-        location: "Lokvica 2, Novi Vinodolski",
-        timeStart: "18:30",
-        timeEnd: "20:30",
+        location: "Magazinska 9a, Zagreb",
+        timeStart: "19:00",
+        timeEnd: "20:00",
       },
     ],
   },
   Utorak: {
-    numberOfClasses: 0,
+    numberOfClasses: 1,
     classes: [
       null,
       null,
       {
-        class: "Dječji program 'Starpoint'",
+        class: "Dječija grupa",
         level: "Početna Razina",
         slug: "drustveni-plesovi",
-        location: "Magazinska 9a,Zagreb",
-        timeStart: "17:30",
-        timeEnd: "19:00",
+        location: "Magazinska 9a, Zagreb",
+        timeStart: "19:00",
+        timeEnd: "20:30",
       },
     ],
   },
   Srijeda: {
-    numberOfClasses: 0,
+    numberOfClasses: 1,
     classes: [
       null,
+      null,
       {
-        class: "Dječji program 'Starpoint'",
-        level: "Početna Razina",
+        class: "Tečaj Plesa (od 17.2.2025)",
+        level: "Početna razina",
         slug: "drustveni-plesovi",
-        location: "Dramalj 47, Hrvatski Narodni Dom",
-        timeStart: "16:00",
-        timeEnd: "18:00",
-      },
-      {
-        class: "Dječji program 'Starpoint'",
-        level: "Početna Razina",
-        slug: "drustveni-plesovi",
-        location: "Lokvica 2, Novi Vinodolski",
-        timeStart: "18:30",
-        timeEnd: "20:30",
+        location: "Magazinska 9a, Zagreb",
+        timeStart: "19:00",
+        timeEnd: "20:00",
       },
     ],
   },
   Četvrtak: {
-    numberOfClasses: 0,
+    numberOfClasses: 1,
     classes: [
       null,
       null,
       {
-        class: "Dječji program 'Starpoint'",
+        class: "Dječija grupa",
         level: "Početna Razina",
         slug: "drustveni-plesovi",
-        location: "Magazinska 9a,Zagreb",
-        timeStart: "17:30",
-        timeEnd: "19:00",
-      },
-    ],
-  },
-  Petak: {
-    numberOfClasses: 0,
-    classes: [
-      null,
-      null,
-      {
-        class: "Početni tečaj u parovima",
-        level: "Početna Razina",
-        slug: "drustveni-plesovi",
-        location: "Magazinska 9a,Zagreb",
-        timeStart: "17:00",
-        timeEnd: "18:30",
-      },
-      {
-        class: "Plesna rekreacija",
-        level: "Srednja Razina",
-        slug: "drustveni-plesovi",
-        location: "Magazinska 9a,Zagreb",
-        timeStart: "18:30",
+        location: "Magazinska 9a, Zagreb",
+        timeStart: "19:00",
         timeEnd: "20:30",
       },
     ],
   },
-  Subota: {
-    numberOfClasses: 0,
+  Petak: {
+    numberOfClasses: 1,
     classes: [
       {
-        class: "Dječji program 'Starpoint'",
+        class: "Dječija grupa",
         level: "Početna Razina",
         slug: "drustveni-plesovi",
-        location: "Magazinska 9a,Zagreb",
+        location: "Magazinska 9a, Zagreb",
         timeStart: "11:00",
         timeEnd: "12:30",
       },
+      // Jutarnji tečaj – dva prazna objekta nakon
+      null,
+      null,
     ],
   },
-  Nedjelja: { numberOfClasses: 0, classes: [] },
+  Subota: {
+    numberOfClasses: 0,
+    classes: [],
+  },
+  Nedjelja: {
+    numberOfClasses: 1,
+    classes: [
+      null,
+      null,
+      {
+        class: "Tečaj Plesa (od 23.2.2025)",
+        level: "Početna razina",
+        slug: "drustveni-plesovi",
+        location: "Magazinska 9a, Zagreb",
+        timeStart: "18:00",
+        timeEnd: "20:00",
+      },
+    ],
+  },
 };
+
 const numberOfTr = (objectData: any) => {
   let numberTr = 0;
   for (let data in objectData) {
