@@ -2,77 +2,157 @@
 
 .schedule {
   margin: 5rem 0 10rem 0;
+
+  &-title {
+    @include h2Font;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba($color-gray-100, 0.4);
+  }
 }
+
+// ─── Mobile Table ─────────────────────────────────────────────────────────────
+
 .mobile-table {
   display: none;
+
   .day {
     @include h2Font;
     font-weight: 300;
+    padding: 0 1rem;
   }
+
   .classes-list {
-    padding: 2rem;
+    padding: 1rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
   }
+
   .lesson {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 0.5rem;
     padding: 1.5rem 1rem;
     border: 1px solid rgba($color-gray-100, 0.4);
-    h2 {
-      color: $color-gray-500;
+
+    .lesson-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+
+      h3 {
+        @include bodyFontMedium;
+        color: $color-gray-500;
+      }
+
+      .lesson-level {
+        font-size: 0.9rem;
+        color: $color-gray-300;
+        white-space: nowrap;
+      }
     }
-    time {
-      @include bodyFontRegular;
-    }
-    address {
-      @include bodyFontSmRegular;
+
+    .lesson-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+
+      time {
+        @include bodyFontRegular;
+        color: $color-primary-300;
+      }
+
+      address {
+        @include bodyFontSmRegular;
+      }
     }
   }
 }
+
+// ─── Desktop Table ────────────────────────────────────────────────────────────
+
 .desktop-table {
   width: 100%;
+
   tr {
     display: flex;
     text-align: center;
+
     th {
-      width: 15%;
+      width: calc(100% / 7);
       background: rgba($color-gray-100, 0.1);
       padding: 1rem 0;
       @include bodyFontRegular;
     }
+
     td {
-      width: 15%;
+      width: calc(100% / 7);
       min-height: 12rem;
       padding: 1rem;
     }
+
     .td-value {
       border: 1px solid rgba($color-gray-100, 0.4);
       transition: 0.3s all;
+
       &:hover {
         background-color: $color-primary-300;
+
         .class-level,
         .class-name,
+        .class-note,
         .time,
         .address {
           color: $color-light;
           transition: 0.3s all;
         }
+
+        // override link color on hover
+        .class-name a {
+          color: $color-light;
+        }
+
+        .time {
+          color: $color-light;
+        }
       }
+
       .class-name {
         @include bodyFontMedium;
+
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
       }
+
       .class-level {
         font-size: 1rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
       }
+
+      .class-note {
+        font-size: 0.85rem;
+        color: $color-gray-300;
+        margin-bottom: 0.5rem;
+        font-style: italic;
+      }
+
       .time {
         color: $color-primary-300;
         display: flex;
         flex-direction: column;
+
         .separator {
           line-height: 0.4rem;
         }
+
         @include h3FontMedium;
       }
+
       .address {
         padding-top: 1rem;
         @include bodyFontSmRegular;
@@ -80,13 +160,18 @@
     }
   }
 }
+
+// ─── Responsive ───────────────────────────────────────────────────────────────
+
 @media screen and (max-width: $breakpoint-mobile) {
   .schedule {
     margin: 5rem 0;
   }
+
   .desktop-table {
     display: none;
   }
+
   .mobile-table {
     display: block;
   }

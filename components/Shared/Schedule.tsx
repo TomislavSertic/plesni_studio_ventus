@@ -3,222 +3,304 @@ import styles from "./Schedule.module.scss";
 import { Wrapper } from "../Layout/Wrapper/Wrapper";
 import Link from "next/link";
 
-const SCHEDULE = {
-  Ponedjeljak: {
-    numberOfClasses: 1,
-    classes: [
-      // Večernji tečaj – dva prazna objekta prije
+export type DayOfWeek =
+  | "Ponedjeljak"
+  | "Utorak"
+  | "Srijeda"
+  | "Četvrtak"
+  | "Petak"
+  | "Subota"
+  | "Nedjelja";
 
-      null,
-      null,
-      {
-        class: "Tečaj Plesa (od 17.2.2025)",
-        level: "Početna razina",
-        slug: "drustveni-plesovi",
-        location: "Magazinska 9a, Zagreb",
-        timeStart: "19:00",
-        timeEnd: "20:00",
-      },
-    ],
-  },
-  Utorak: {
-    numberOfClasses: 1,
-    classes: [
-      null,
-      null,
-      {
-        class: "Dječija grupa",
-        level: "Početna Razina",
-        slug: "drustveni-plesovi",
-        location: "Magazinska 9a, Zagreb",
-        timeStart: "19:00",
-        timeEnd: "20:30",
-      },
-    ],
-  },
-  Srijeda: {
-    numberOfClasses: 1,
-    classes: [
-      null,
-      null,
-      {
-        class: "Tečaj Plesa (od 17.2.2025)",
-        level: "Početna razina",
-        slug: "drustveni-plesovi",
-        location: "Magazinska 9a, Zagreb",
-        timeStart: "19:00",
-        timeEnd: "20:00",
-      },
-    ],
-  },
-  Četvrtak: {
-    numberOfClasses: 1,
-    classes: [
-      null,
-      null,
-      {
-        class: "Dječija grupa",
-        level: "Početna Razina",
-        slug: "drustveni-plesovi",
-        location: "Magazinska 9a, Zagreb",
-        timeStart: "19:00",
-        timeEnd: "20:30",
-      },
-    ],
-  },
-  Petak: {
-    numberOfClasses: 1,
-    classes: [
-      {
-        class: "Dječija grupa",
-        level: "Početna Razina",
-        slug: "drustveni-plesovi",
-        location: "Magazinska 9a, Zagreb",
-        timeStart: "11:00",
-        timeEnd: "12:30",
-      },
-      // Jutarnji tečaj – dva prazna objekta nakon
-      null,
-      null,
-    ],
-  },
-  Subota: {
-    numberOfClasses: 0,
-    classes: [],
-  },
-  Nedjelja: {
-    numberOfClasses: 1,
-    classes: [
-      null,
-      null,
-      {
-        class: "Tečaj Plesa (od 23.2.2025)",
-        level: "Početna razina",
-        slug: "drustveni-plesovi",
-        location: "Magazinska 9a, Zagreb",
-        timeStart: "18:00",
-        timeEnd: "20:00",
-      },
-    ],
-  },
+export interface IScheduleClass {
+  _key: string;
+  className: string;
+  level: string;
+  slug: string;
+  location: string;
+  timeStart: string;
+  timeEnd: string;
+  note?: string;
+}
+
+export interface IDaySchedule {
+  _key: string;
+  day: DayOfWeek;
+  classes: IScheduleClass[];
+}
+
+export interface IScheduleData {
+  _id: string;
+  days: IDaySchedule[];
+}
+
+const DUMMY_SCHEDULE_DATA: IScheduleData = {
+  _id: "schedule-main",
+  days: [
+    {
+      _key: "day-pon",
+      day: "Ponedjeljak",
+      classes: [
+        {
+          _key: "cls-pon-1",
+          className: "Tečaj Plesa",
+          level: "Početna razina",
+          slug: "drustveni-plesovi",
+          location: "Magazinska 9a, Zagreb",
+          timeStart: "19:00",
+          timeEnd: "20:00",
+          note: "od 17.2.2025.",
+        },
+      ],
+    },
+    {
+      _key: "day-uto",
+      day: "Utorak",
+      classes: [
+        {
+          _key: "cls-uto-1",
+          className: "Dječija grupa",
+          level: "Početna Razina",
+          slug: "drustveni-plesovi",
+          location: "Magazinska 9a, Zagreb",
+          timeStart: "19:00",
+          timeEnd: "20:30",
+        },
+      ],
+    },
+    {
+      _key: "day-sri",
+      day: "Srijeda",
+      classes: [
+        {
+          _key: "cls-sri-1",
+          className: "Tečaj Plesa",
+          level: "Početna razina",
+          slug: "drustveni-plesovi",
+          location: "Magazinska 9a, Zagreb",
+          timeStart: "19:00",
+          timeEnd: "20:00",
+          note: "od 17.2.2025.",
+        },
+      ],
+    },
+    {
+      _key: "day-cet",
+      day: "Četvrtak",
+      classes: [
+        {
+          _key: "cls-cet-1",
+          className: "Dječija grupa",
+          level: "Početna Razina",
+          slug: "drustveni-plesovi",
+          location: "Magazinska 9a, Zagreb",
+          timeStart: "19:00",
+          timeEnd: "20:30",
+        },
+      ],
+    },
+    {
+      _key: "day-pet",
+      day: "Petak",
+      classes: [
+        {
+          _key: "cls-pet-1",
+          className: "Dječija grupa",
+          level: "Početna Razina",
+          slug: "drustveni-plesovi",
+          location: "Magazinska 9a, Zagreb",
+          timeStart: "11:00",
+          timeEnd: "12:30",
+        },
+      ],
+    },
+    {
+      _key: "day-sub",
+      day: "Subota",
+      classes: [],
+    },
+    {
+      _key: "day-ned",
+      day: "Nedjelja",
+      classes: [
+        {
+          _key: "cls-ned-1",
+          className: "Tečaj Plesa",
+          level: "Početna razina",
+          slug: "drustveni-plesovi",
+          location: "Magazinska 9a, Zagreb",
+          timeStart: "18:00",
+          timeEnd: "20:00",
+          note: "od 23.2.2025.",
+        },
+      ],
+    },
+  ],
 };
 
-const numberOfTr = (objectData: any) => {
-  let numberTr = 0;
-  for (let data in objectData) {
-    if (objectData[data].classes.length > numberTr) {
-      numberTr = objectData[data].classes.length;
-    }
-  }
-  return numberTr;
-};
-export const Schedule = () => {
-  const objectKeys = Object.keys(SCHEDULE) as Array<keyof typeof SCHEDULE>;
-  const generateTbody = () => {
-    let trs = [];
-    for (let i = 0; i < numberOfTr(SCHEDULE); i++) {
-      let td = [];
-      for (let key of objectKeys) {
-        if (SCHEDULE[key].classes[i]) {
-          td.push(
-            <td key={Math.random()} className={styles["td-value"]}>
-              <p className={styles["class-name"]}>
-                <Link href={`/classes/${SCHEDULE[key].classes[i]?.slug}`}>
-                  {SCHEDULE[key].classes[i]?.class}
-                </Link>
-              </p>
-              <p className={styles["class-level"]}>
-                {SCHEDULE[key].classes[i]?.level}
-              </p>
-              <time className={styles["time"]}>
-                <span>{SCHEDULE[key].classes[i]?.timeStart}</span>
-                <span className={styles["separator"]}>-</span>
-                <span>{SCHEDULE[key].classes[i]?.timeEnd}</span>
-              </time>
-              <address className={styles["address"]}>
-                {SCHEDULE[key].classes[i]?.location}
-              </address>
-            </td>
-          );
-        } else {
-          td.push(
-            <td key={Math.random()} className={styles["empty-td"]}>
-              {" "}
-            </td>
-          );
-        }
-      }
-      trs.push(<tr key={Math.random()}>{td.map((data) => data)}</tr>);
-    }
-    return (
-      <>
-        {trs.map((data) => {
-          return data;
-        })}
-      </>
-    );
-  };
+// ─── Helpers ──────────────────────────────────────────────────────────────────
 
+const ORDERED_DAYS: DayOfWeek[] = [
+  "Ponedjeljak",
+  "Utorak",
+  "Srijeda",
+  "Četvrtak",
+  "Petak",
+  "Subota",
+  "Nedjelja",
+];
+
+/** Vraća IDaySchedule za određeni dan; ako dan ne postoji u podacima, vraća prazan dan */
+const getDayData = (days: IDaySchedule[], day: DayOfWeek): IDaySchedule => {
   return (
-    <Wrapper>
-      <div className={styles["schedule"]}>
-        <div className={styles["table-container"]}>
-          <table className={styles["desktop-table"]}>
-            <thead className={styles["thead"]}>
-              <tr>
-                {Object.keys(SCHEDULE).map((day) => {
-                  return <th key={day}>{day}</th>;
-                })}
-              </tr>
-            </thead>
-            <tbody>{generateTbody()}</tbody>
-          </table>
-          <MobileScheduleTable />
-        </div>
-      </div>
-    </Wrapper>
+    days.find((d) => d.day === day) ?? {
+      _key: `empty-${day}`,
+      day,
+      classes: [],
+    }
   );
 };
 
-export const MobileScheduleTable = () => {
-  const objectKeys = Object.keys(SCHEDULE) as Array<keyof typeof SCHEDULE>;
-  const daysWithData = objectKeys.filter((day) => {
-    if (SCHEDULE[day].classes.length > 0) {
-      return day;
-    }
-  });
+const sortByTime = (classes: IScheduleClass[]): IScheduleClass[] =>
+  [...classes].sort((a, b) => a.timeStart.localeCompare(b.timeStart));
+
+const getMaxClasses = (days: IDaySchedule[]): number =>
+  Math.max(...days.map((d) => d.classes.length), 1);
+
+// ─── Sub-components ───────────────────────────────────────────────────────────
+
+interface ClassCellProps {
+  lesson: IScheduleClass;
+}
+
+const ClassCell: React.FC<ClassCellProps> = ({ lesson }) => (
+  <td className={styles["td-value"]}>
+    <p className={styles["class-name"]}>
+      <Link href={`/classes/${lesson.slug}`}>{lesson.className}</Link>
+    </p>
+    <p className={styles["class-level"]}>{lesson.level}</p>
+    {lesson.note && <p className={styles["class-note"]}>{lesson.note}</p>}
+    <time className={styles["time"]}>
+      <span>{lesson.timeStart}</span>
+      <span className={styles["separator"]}>-</span>
+      <span>{lesson.timeEnd}</span>
+    </time>
+    <address className={styles["address"]}>{lesson.location}</address>
+  </td>
+);
+
+// ─── Desktop Table ────────────────────────────────────────────────────────────
+
+interface DesktopScheduleTableProps {
+  scheduleData: IScheduleData;
+}
+
+const DesktopScheduleTable: React.FC<DesktopScheduleTableProps> = ({
+  scheduleData,
+}) => {
+  const orderedDays = ORDERED_DAYS.map((day) =>
+    getDayData(scheduleData.days, day),
+  );
+  const maxRows = getMaxClasses(orderedDays);
+
+  return (
+    <table className={styles["desktop-table"]}>
+      <thead className={styles["thead"]}>
+        <tr>
+          {ORDERED_DAYS.map((day) => (
+            <th key={day}>{day}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {Array.from({ length: maxRows }).map((_, rowIndex) => (
+          <tr key={rowIndex}>
+            {orderedDays.map((dayData) => {
+              const sorted = sortByTime(dayData.classes);
+              const lesson = sorted[rowIndex];
+              return lesson ? (
+                <ClassCell key={lesson._key} lesson={lesson} />
+              ) : (
+                <td
+                  key={`empty-${dayData._key}-${rowIndex}`}
+                  className={styles["empty-td"]}
+                />
+              );
+            })}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
+
+// ─── Mobile Table ─────────────────────────────────────────────────────────────
+
+interface MobileScheduleTableProps {
+  scheduleData: IScheduleData;
+}
+
+const MobileScheduleTable: React.FC<MobileScheduleTableProps> = ({
+  scheduleData,
+}) => {
+  const daysWithClasses = ORDERED_DAYS.map((day) =>
+    getDayData(scheduleData.days, day),
+  ).filter((d) => d.classes.length > 0);
 
   return (
     <div className={styles["mobile-table"]}>
-      {daysWithData.map((day) => {
-        return (
-          <div key={day} className={styles["table-row"]}>
-            <h1 className={styles["day"]}>{day}</h1>
-            <ul className={styles["classes-list"]}>
-              {SCHEDULE[day].classes.map((lesson) => {
-                if (lesson) {
-                  return (
-                    <li
-                      key={lesson.class + Math.random()}
-                      className={styles["lesson"]}
-                    >
-                      <h2>{lesson.class}</h2>
-                      <div className="time-address-container">
-                        <time>
-                          {lesson.timeStart} - {lesson.timeEnd}
-                        </time>
-                        <address>{lesson.location}</address>
-                      </div>
-                    </li>
-                  );
-                } else {
-                  return <></>;
-                }
-              })}
-            </ul>
-          </div>
-        );
-      })}
+      {daysWithClasses.map((dayData) => (
+        <div key={dayData._key} className={styles["table-row"]}>
+          <h2 className={styles["day"]}>{dayData.day}</h2>
+          <ul className={styles["classes-list"]}>
+            {sortByTime(dayData.classes).map((lesson) => (
+              <li key={lesson._key} className={styles["lesson"]}>
+                <div className={styles["lesson-header"]}>
+                  <h3>{lesson.className}</h3>
+                  <span className={styles["lesson-level"]}>{lesson.level}</span>
+                </div>
+                <div className={styles["lesson-details"]}>
+                  <time>
+                    {lesson.timeStart} – {lesson.timeEnd}
+                  </time>
+                  {lesson.note && (
+                    <span className={styles["class-note"]}>{lesson.note}</span>
+                  )}
+                  <address>{lesson.location}</address>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
+  );
+};
+
+// ─── Main Component ───────────────────────────────────────────────────────────
+// Props prihvaća scheduleData sa Sanity-a.
+// Dok Sanity fetch nije implementiran, koristi DUMMY_SCHEDULE_DATA kao fallback.
+
+interface ScheduleProps {
+  scheduleData?: IScheduleData;
+  showTitle?: boolean;
+}
+
+export const Schedule: React.FC<ScheduleProps> = ({
+  scheduleData = DUMMY_SCHEDULE_DATA,
+  showTitle = false,
+}) => {
+  return (
+    <Wrapper>
+      <div className={styles["schedule"]}>
+        {showTitle && scheduleData.title && (
+          <h2 className={styles["schedule-title"]}>{scheduleData.title}</h2>
+        )}
+        <div className={styles["table-container"]}>
+          <DesktopScheduleTable scheduleData={scheduleData} />
+          <MobileScheduleTable scheduleData={scheduleData} />
+        </div>
+      </div>
+    </Wrapper>
   );
 };

@@ -88,3 +88,31 @@ export interface IClass {
   timeStart: string;
   timeEnd: string;
 }
+export interface IScheduleClass {
+  _key: string;
+  className: string;
+  level: string;
+  slug: string;
+  location: string;
+  timeStart: string;
+  timeEnd: string;
+  note?: string;
+}
+export interface IDaySchedule {
+  _key: string;
+  day:
+    | "Ponedjeljak"
+    | "Utorak"
+    | "Srijeda"
+    | "Četvrtak"
+    | "Petak"
+    | "Subota"
+    | "Nedjelja";
+  classes: IScheduleClass[];
+}
+export interface IScheduleData {
+  _id: string;
+  title: string;
+  isMain: boolean;
+  days: IDaySchedule[];
+}
