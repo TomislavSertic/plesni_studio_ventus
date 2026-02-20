@@ -1,4 +1,10 @@
-import { IClass, IDances, IInstructors, IPost } from "../types/sanity-types";
+import {
+  IClass,
+  IDances,
+  IInstructors,
+  IPost,
+  IScheduleData,
+} from "../types/sanity-types";
 import { client } from "./sanity.client";
 
 /* INSTRUCTORS SCHEMA */
@@ -20,7 +26,7 @@ export const getInstructor = async (slug: string | string[]) => {
       knowledge[]->
     }`);
   const instructor = instructorsListData.find(
-    (instructor: IInstructors) => instructor.slug.current === slug
+    (instructor: IInstructors) => instructor.slug.current === slug,
   );
 
   return instructor;
@@ -44,7 +50,7 @@ export const getDance = async (slug: string | string[]) => {
             categories[]->
         }`);
   const dance = allDanceData.find(
-    (dance: IDances) => dance.slug.current === slug
+    (dance: IDances) => dance.slug.current === slug,
   );
 
   return dance;
@@ -104,7 +110,7 @@ export const getLatestPosts = async (numberOfLatest: number) => {
 export const getPostBySlug = async (slug: string | string[]) => {
   const postsData = await getAllPosts();
   const filteredPost = postsData.find(
-    (post: IPost) => post.slug.current === slug
+    (post: IPost) => post.slug.current === slug,
   );
 
   return filteredPost;
@@ -116,4 +122,31 @@ export const getPostsPaths = async () => {
     return { params: { postid: post.slug.current } };
   });
   return pathsList;
+};
+/* SCHEDULE SCHEMA */
+export const getAllSchedules = async (): Promise<IScheduleData[]> => {
+  const scheduleGroq = `
+    *[_type == 'scheduleSchema' && (!(_id in path("drafts.**")))] | order(isMain desc) {
+      _id,
+      title,
+      isMain,
+      days[] {
+        _key,
+        day,
+        classes[] {
+          _key,
+          className,
+          level,
+          "slug": classRef->slug.current,
+          location,
+          timeStart,
+          timeEnd,
+          note
+        }
+      }
+    }
+  `;
+
+  const data = await client.fetch(scheduleGroq);
+  return data ?? [];
 };

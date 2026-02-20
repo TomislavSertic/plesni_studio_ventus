@@ -1,0 +1,322 @@
+Folder PATH listing
+Volume serial number is CCAD-CE94
+C:.
+|   .env.local
+|   .eslintrc.json
+|   .gitignore
+|   next-env.d.ts
+|   next.config.js
+|   package-lock.json
+|   package.json
+|   README.md
+|   sanity.cli.ts
+|   sanity.config.ts
+|   structure.txt
+|   struktura.txt
+|   theme.ts
+|   tsconfig.json
+|   
++---components
+|   +---AboutPage
+|   |       OurTeachers.module.scss
+|   |       OurTeachers.tsx
+|   |       StudentTestimonials.module.scss
+|   |       StudentTestimonials.tsx
+|   |       Welcome.module.scss
+|   |       Welcome.tsx
+|   |       
+|   +---Cards
+|   |       InstructorCard.module.scss
+|   |       InstructorCard.tsx
+|   |       NewsCard.module.scss
+|   |       NewsCard.tsx
+|   |       PageCard.module.scss
+|   |       PageCard.tsx
+|   |       RoundCard.module.scss
+|   |       RoundCard.tsx
+|   |       
+|   +---ClassesPage
+|   |       SingleClassContent.module.scss
+|   |       SingleClassContent.tsx
+|   |       
+|   +---ContactPage
+|   |       ContactInfo.module.scss
+|   |       ContactInfo.tsx
+|   |       
+|   +---EventPage
+|   |       EventBody.module.scss
+|   |       EventBody.tsx
+|   |       EventDetails.module.scss
+|   |       EventDetails.tsx
+|   |       EventHeader.module.scss
+|   |       EventHeader.tsx
+|   |       
+|   +---HomePage
+|   |   |   HeroTitle.module.scss
+|   |   |   HeroTitle.tsx
+|   |   |   LatestNews.module.scss
+|   |   |   LatestNews.tsx
+|   |   |   MiddleCards.module.scss
+|   |   |   MiddleCards.tsx
+|   |   |   OurInstructors.module.scss
+|   |   |   OurInstructors.tsx
+|   |   |   
+|   |   \---UpcomingEvents
+|   |           EventItem.module.scss
+|   |           EventItem.tsx
+|   |           EventsList.module.scss
+|   |           EventsList.tsx
+|   |           UpcomingEvents.module.scss
+|   |           UpcomingEvents.tsx
+|   |           
+|   +---Icons
+|   |       PlusIcon.tsx
+|   |       
+|   +---InstructorsPage
+|   |       InstructorPageContent.module.scss
+|   |       InstructorPageContent.tsx
+|   |       
+|   +---Layout
+|   |   |   Layout.module.scss
+|   |   |   Layout.tsx
+|   |   |   
+|   |   +---Footer
+|   |   |       Footer.module.scss
+|   |   |       Footer.tsx
+|   |   |       FooterNav.module.scss
+|   |   |       FooterNav.tsx
+|   |   |       
+|   |   +---HeroSection
+|   |   |       HeroSection.module.scss
+|   |   |       HeroSection.tsx
+|   |   |       
+|   |   +---Navigation
+|   |   |   |   Navigation.module.scss
+|   |   |   |   Navigation.tsx
+|   |   |   |   NAVIGATIONPATHS.ts
+|   |   |   |   
+|   |   |   +---DesktopNavigation
+|   |   |   |       DesktopNavigation.module.scss
+|   |   |   |       DesktopNavigation.tsx
+|   |   |   |       NavigationItem.module.scss
+|   |   |   |       NavigationItem.tsx
+|   |   |   |       NavigationList.module.scss
+|   |   |   |       NavigationList.tsx
+|   |   |   |       
+|   |   |   \---MobileNavigation
+|   |   |           MobileModal.module.scss
+|   |   |           MobileModal.tsx
+|   |   |           MobileNavigation.module.scss
+|   |   |           MobileNavigation.tsx
+|   |   |           NavigationList.module.scss
+|   |   |           NavigationList.tsx
+|   |   |           
+|   |   \---Wrapper
+|   |           Wrapper.module.scss
+|   |           Wrapper.tsx
+|   |           
+|   +---NewsPage
+|   |       NewsBody.module.scss
+|   |       NewsBody.tsx
+|   |       NewsList.module.scss
+|   |       NewsList.tsx
+|   |       NewsPostHeader.module.scss
+|   |       NewsPostHeader.tsx
+|   |       
+|   +---sanity
+|   |       CustomPortableTextComponents.module.scss
+|   |       CustomPortableTextComponents.tsx
+|   |       youtube.tsx
+|   |       
+|   +---Shared
+|   |   |   ContactForm.module.scss
+|   |   |   ContactForm.tsx
+|   |   |   CtaBanner.module.scss
+|   |   |   CtaBanner.tsx
+|   |   |   FreeLessonSignup.module.scss
+|   |   |   FreeLessonSignup.tsx
+|   |   |   PriceList.module.scss
+|   |   |   PriceList.tsx
+|   |   |   Schedule.module.scss
+|   |   |   Schedule.tsx
+|   |   |   WhatYouGet.module.scss
+|   |   |   WhatYouGet.tsx
+|   |   |   
+|   |   +---InfoBox
+|   |   |       InfoBox.module.scss
+|   |   |       InfoBox.tsx
+|   |   |       InfoBoxItem.module.scss
+|   |   |       InfoBoxItem.tsx
+|   |   |       
+|   |   \---OurClasses
+|   |           OurClasses.module.scss
+|   |           OurClasses.tsx
+|   |           
+|   \---UI
+|       |   Button.module.scss
+|       |   Button.tsx
+|       |   FormStatus.module.scss
+|       |   FormStatus.tsx
+|       |   HeroTitle.module.scss
+|       |   HeroTitle.tsx
+|       |   LightPageTitle.module.scss
+|       |   LightPageTitle.tsx
+|       |   StatusAlertModal.module.scss
+|       |   StatusAlertModal.tsx
+|       |   UnderConstruction.module.scss
+|       |   UnderConstruction.tsx
+|       |   
+|       \---FormElements
+|               FormButton.module.scss
+|               FormButton.tsx
+|               
++---lib
+|       helper-functions.ts
+|       sanity.client.ts
+|       sanity.preview.ts
+|       sanityFetch.ts
+|       
++---pages
+|   |   index.tsx
+|   |   sitemap.xml
+|   |   _app.tsx
+|   |   _document.tsx
+|   |   
+|   +---aboutus
+|   |       index.tsx
+|   |       
+|   +---api
+|   |       contact.ts
+|   |       hello.ts
+|   |       mail.ts
+|   |       registration.ts
+|   |       
+|   +---classes
+|   |       index.tsx
+|   |       [classid].tsx
+|   |       
+|   +---contact
+|   |       index.tsx
+|   |       
+|   +---events
+|   |       index.tsx
+|   |       [eventid].tsx
+|   |       
+|   +---instructors
+|   |       [instructorid].tsx
+|   |       
+|   +---news
+|   |       index.tsx
+|   |       [postid].tsx
+|   |       
+|   +---schedule
+|   |       index.tsx
+|   |       
+|   \---studio
+|           [[...index]].tsx
+|           
++---public
+|   |   favicon-16x16.png
+|   |   favicon-32x32.png
+|   |   favicon.ico
+|   |   next.svg
+|   |   sitemap.xml
+|   |   thirteen.svg
+|   |   vercel.svg
+|   |   
+|   +---icons
+|   |       close.png
+|   |       fb.png
+|   |       hamburger.png
+|   |       heart-health.png
+|   |       heart-health2.png
+|   |       ig.png
+|   |       linkedin.png
+|   |       mail-dark.png
+|   |       music-white.png
+|   |       people.png
+|   |       phone-dark.png
+|   |       telegram.png
+|   |       tiktok.png
+|   |       yt.png
+|   |       
+|   \---images
+|       |   aboutus-bg.webp
+|       |   aboutus-card.webp
+|       |   backgr7.png
+|       |   classes-bg.webp
+|       |   client-review-card.webp
+|       |   dance-illustration.webp
+|       |   disco-dance.png
+|       |   domagoj-sertic.png
+|       |   file 2.png
+|       |   girl-jumping.png
+|       |   Group 1.jpg
+|       |   Group22.jpg
+|       |   Group33.jpg
+|       |   Group55.jpg
+|       |   hero-image.webp
+|       |   hip-hop.png
+|       |   house-dance.jpg
+|       |   kantoleekg-bijel stol-ispravak.png
+|       |   kantoleekg-bijel stol.png
+|       |   kantoleekg.png
+|       |   kantoleekg2-bijeli stol.png
+|       |   kantoleekg2.png
+|       |   korina-kovacic.png
+|       |   latino.jpg
+|       |   learntodance.webp
+|       |   logo jazavci mali.png
+|       |   logo jazavci.png
+|       |   main-logo-black.png
+|       |   main-logo-text-wrap.png
+|       |   main-logo-text-wrap_v2-whitebg.png
+|       |   main-logo-text-wrap_v2.png
+|       |   main-logo-white.png
+|       |   main-logo-whitebg-space.png
+|       |   main-logo4.png
+|       |   modern-dance.jpg
+|       |   plesovi-bg.webp
+|       |   prvi-ples.png
+|       |   samba.webp
+|       |   tango-dance.webp
+|       |   under-construction.png
+|       |   Untitled-1.png
+|       |   zid-dark.webp
+|       |   zid.png
+|       |   
+|       \---klijenti
+|               josip-djerek.png
+|               mateja-vidakovic.png
+|               mislav-sucec.png
+|               tomislav-horvat.png
+|               
++---schemas
+|       author.ts
+|       blockContent.ts
+|       category.ts
+|       classEntry.ts
+|       contactMessage.ts
+|       dances.ts
+|       daySchedule.ts
+|       event.ts
+|       index.ts
+|       instructors.ts
+|       post.ts
+|       registrationMessage.ts
+|       schedule.ts
+|       youtube.ts
+|       
++---StaticData
+|       INSTRUCTORS.json
+|       OURCLASSES.json
+|       TESTIMONIALS.json
+|       
++---styles
+|       globals.css
+|       _variables.scss
+|       
+\---types
+        general.ts
+        sanity-types.ts
+        

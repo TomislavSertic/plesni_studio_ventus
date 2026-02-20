@@ -8,7 +8,9 @@ import contactMessage from "./contactMessage";
 import registrationMessage from "./registrationMessage";
 import instructors from "./instructors";
 import dances from "./dances";
-
+import daySchedule from "./daySchedule";
+import scheduleSchema from "./scheduleSchema";
+import classEntry from "./classEntry";
 export const schemaTypes = [
   post,
   event,
@@ -20,4 +22,7 @@ export const schemaTypes = [
   contactMessage,
   registrationMessage,
   blockContent,
+  scheduleSchema,
+  daySchedule,
+  classEntry,
 ];
