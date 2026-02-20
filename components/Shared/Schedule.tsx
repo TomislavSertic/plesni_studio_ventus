@@ -32,6 +32,7 @@ export interface IDaySchedule {
 export interface IScheduleData {
   _id: string;
   days: IDaySchedule[];
+  title?: string;
 }
 
 const DUMMY_SCHEDULE_DATA: IScheduleData = {
