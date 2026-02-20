@@ -19,7 +19,7 @@ export default defineType({
       name: "title",
       title: "Naziv Rasporeda",
       type: "string",
-      initialValue: "Glavni raspored",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "isMain",
@@ -39,11 +39,8 @@ export default defineType({
           name: "daySchedule",
           title: "Dan",
           preview: {
-            select: {
-              title: "day",
-              classes: "classes",
-            },
-            prepare({ title, classes }: { title: string; classes: any[] }) {
+            select: { title: "day", classes: "classes" },
+            prepare({ title, classes }) {
               const count = Array.isArray(classes) ? classes.length : 0;
               return {
                 title,
@@ -56,10 +53,7 @@ export default defineType({
               name: "day",
               title: "Dan u tjednu",
               type: "string",
-              options: {
-                list: DAYS_OF_WEEK,
-                layout: "dropdown",
-              },
+              options: { list: DAYS_OF_WEEK, layout: "dropdown" },
               validation: (Rule) => Rule.required(),
             }),
             defineField({
@@ -72,21 +66,9 @@ export default defineType({
                   name: "scheduleClass",
                   title: "Sat",
                   preview: {
-                    select: {
-                      title: "className",
-                      subtitle: "timeStart",
-                    },
-                    prepare({
-                      title,
-                      subtitle,
-                    }: {
-                      title: string;
-                      subtitle: string;
-                    }) {
-                      return {
-                        title,
-                        subtitle: `Početak: ${subtitle}`,
-                      };
+                    select: { title: "className", subtitle: "timeStart" },
+                    prepare({ title, subtitle }) {
+                      return { title, subtitle: `Početak: ${subtitle}` };
                     },
                   },
                   fields: [
@@ -117,10 +99,9 @@ export default defineType({
                       name: "classRef",
                       title: "Klasa (link)",
                       type: "reference",
-                      to: { type: "classEntry" },
+                      to: [{ type: "classEntry" }],
                       description: "Odaberi klasu na koju ovaj sat upućuje",
                     }),
-
                     defineField({
                       name: "location",
                       title: "Lokacija",
@@ -164,8 +145,12 @@ export default defineType({
     }),
   ],
   preview: {
-    select: {
-      title: "title",
+    select: { title: "title", isMain: "isMain" },
+    prepare({ title, isMain }) {
+      return {
+        title,
+        subtitle: isMain ? "⭐ Glavni raspored" : "Specijalni raspored",
+      };
     },
   },
 });
